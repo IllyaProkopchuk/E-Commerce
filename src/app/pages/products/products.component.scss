@@ -1,0 +1,134 @@
+.container {
+  min-height: 300px;
+  padding-top: 120px;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+}
+
+.body {
+  background-color: #f4f6f8;
+}
+
+.filerPart {
+  width: 268px;
+}
+
+.productsPart {
+  width: 880px;
+}
+
+.categoriesBlock {
+  width: 268px;
+  height: 242px;
+  background-color: #ffffff;
+  padding: 41px;
+}
+
+.priceFilter {
+  width: 268px;
+  height: 232px;
+  background-color: #ffffff;
+  margin-top: 29px;
+  padding: 41px;
+}
+
+.sizesBlock {
+  width: 268px;
+  height: 302px;
+  background-color: #ffffff;
+  margin-top: 29px;
+  padding: 41px;
+}
+
+.brandsBlock {
+  width: 268px;
+  height: 302px;
+  background-color: #ffffff;
+  margin-top: 31px;
+  padding: 41px;
+}
+
+.catTitle {
+  width: 93px;
+  height: 19px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 22px;
+  font-weight: 400;
+}
+
+ul li {
+  width: 70px;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 50px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+ul li :nth-last-of-type(1) {
+  margin-top: 40px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.row input {
+  width: 45px;
+  height: 30px;
+  background-color: #edf0f2;
+  margin-left: 5px;
+  border: none;
+  padding-left: 5px;
+}
+
+.value {
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 50.09px;
+}
+
+.mar {
+  margin-right: 20px;
+}
+
+.priceFilterHead{
+    margin-bottom: 39px;
+    width: 118px;
+    height: 15px;
+    color: #ff5912;
+    font-family: "Harmonia Sans Pro Cyr Bold";
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.size li{
+    list-style-type: square;
+}
+.marg{
+    margin-bottom: 1px;
+}
+.radiobut{
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+label{
+    color: #34404b;
+    font-family: "Harmonia Sans Pro Cyr";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+
+

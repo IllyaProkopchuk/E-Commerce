@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Options, LabelType } from 'ng5-slider';
+import { Ng5SliderModule } from 'ng5-slider';
+
 
 @Component({
   selector: 'app-products',
@@ -6,6 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  minValue: number = 50;
+  maxValue: number = 300;
+  options: Options = {
+    floor: 0,
+    ceil: 400
+  };
 
   constructor() { }
 

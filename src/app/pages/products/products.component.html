@@ -1,1 +1,41 @@
-<p>products works!</p>
+<div class="body">
+  <div class="container">
+    <div class="filerPart">
+      <div class="categoriesBlock">
+        <p class="catTitle">Categories</p>
+        <ul>
+          <li>Man</li>
+          <li>Woman</li>
+          <li>Childrens</li>
+        </ul>
+      </div>
+      <div class="priceFilter">
+        <p class="priceFilterHead">Price Filter</p>
+        <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+        <div class="row">
+          <p class="value mar">From: <input type="number" [(ngModel)]="minValue"></p>
+          <p class="value">To: <input type="number" [(ngModel)]="maxValue"></p>
+        </div>
+      </div>
+      <div class="sizesBlock">
+        <p class="catTitle marg">Sizes</p>
+        <input type="checkbox" id="checkbox-b" name="checkbox" class="radiobut"><label
+          for="checkbox-b">Small</label><br>
+        <input type="checkbox" name="rr" class="radiobut"><label>Medium</label><br>
+        <input type="checkbox" name="rr" class="radiobut"><label>Large</label><br>
+        <input type="checkbox" name="rr" class="radiobut"><label>X Large</label><br>
+      </div>
+      <div class="brandsBlock">
+        <p class="catTitle marg">Brands</p>
+        <input type="checkbox" id="checkbox-b" name="checkbox" class="radiobut"><label
+          for="checkbox-b">Reebok</label><br>
+        <input type="checkbox" name="rr" class="radiobut"><label>Addidas</label><br>
+        <input type="checkbox" name="rr" class="radiobut"><label>Nike</label><br>
+        <input type="checkbox" name="rr" class="radiobut"><label>Hilfiger</label><br>
+
+      </div>
+    </div>
+    <div class="productsPart"></div>
+
+  </div>
+</div>
