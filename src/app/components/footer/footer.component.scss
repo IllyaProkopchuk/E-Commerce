@@ -1,0 +1,140 @@
+.footer {
+  height: 540px;
+  background-color: #f4f6f8;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.container {
+  margin-bottom: 122px;
+}
+
+.newsLetter {
+  height: 123px;
+  background-color: #ffffff;
+
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 23px;
+}
+
+.orangePart {
+  width: 110px;
+  height: 15px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 23px;
+}
+
+.blackPart {
+  width: 271px;
+  height: 15px;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr Italic";
+  font-size: 14px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.myimg {
+  width: 18px;
+  height: 11px;
+  margin-right: 10px;
+}
+
+.centerPartText {
+  width: 130px;
+  height: 15px;
+  color: #7c8791;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 14px;
+  font-style: italic;
+}
+
+.rightPartLetter {
+  width: 100px;
+  height: 50px;
+  background-color: #ff5912;
+  color: #ffffff;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: -20px;
+  text-align: center;
+  padding-top: 18px;
+}
+
+.botPart {
+  height: 250px;
+  background-color: #ffffff;
+  padding-top: 88px;
+  padding-bottom: 88px;
+  padding-left: 185px;
+  padding-right: 185px;
+}
+
+.inner {
+  height: 75px;
+  font-family: "Harmonia Sans Pro";
+  font-size: 14px;
+  font-weight: 400;
+  color: #28313b;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.innerLi {
+  width: 500px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 75px;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: disc;
+  margin: 5px;
+}
+
+li:hover {
+  color: #ff5912;
+}
+
+.innerLogo {
+  margin-top: 15px;
+}
+
+.pMethods {
+  width: 129px;
+  height: 16px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.pMathPhoto {
+  margin-top: 20px;
+}

@@ -1,0 +1,104 @@
+//top header
+.smallHeader {
+  height: 60px;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.leftPart,
+.rightPart {
+  padding-top: 24px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  height: 12px;
+}
+
+.mailImage {
+  width: 18px;
+  height: 11px;
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-right: 15px;
+}
+
+.logo :nth-of-type(4) {
+  margin-right: 0px;
+}
+
+//bot header
+
+$border-color: #e6e8eb;
+$activeColor:#ff5912;
+;
+
+.bigHeader {
+  height: 120px;
+  position: relative;
+}
+.menu{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.logotype {
+  margin-right: 83px;
+  margin-top: -15px;
+  width: 145px;
+  height: 50px;
+}
+
+hr {
+  color: $border-color;
+  size: 1px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 16px;
+}
+
+a:hover {
+  color: $activeColor;
+}
+
+.mynav {
+  width: 447px;
+  height: 12px;
+//   margin-top: 38px;
+}
+
+.userSize {
+  width: 20px;
+  height: 21px;
+  margin-right: 29px;
+}
+
+.basketSize {
+  width: 24px;
+  height: 17px;
+}
+
+.menuRight{
+    // margin-top: 55px;
+}

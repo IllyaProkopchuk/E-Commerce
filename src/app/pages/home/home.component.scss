@@ -1,0 +1,264 @@
+.banner {
+  height: 650px;
+  overflow: hidden;
+}
+
+.innerFullBlock {
+  display: flex;
+  flex-direction: row;
+  background: url("https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FBg.png?alt=media&token=c4147a46-8170-49c7-b13a-8748e2b37179");
+  height: 650px;
+  position: relative;
+}
+
+.InnerLeftPartBlock {
+  width: 50%;
+  height: 650px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.InnerRightPartBlock {
+  width: 50%;
+  height: 650px;
+  background: url("https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FImg.png?alt=media&token=ef254042-a0a7-4c66-86a5-30f851da9283");
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.innerText {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+}
+
+h1 {
+  width: 401px;
+  height: 37px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 52px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 29px;
+}
+
+.textTop {
+  height: 17px;
+  color: #3c4751;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 29.97px;
+}
+
+.textBot {
+  width: 520px;
+  height: 16px;
+  color: #495662;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 29.97px;
+  margin-top: 13px;
+  margin-bottom: 63px;
+}
+
+.textOrder {
+  height: 13px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.buyIt {
+  height: 14px;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 21px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.around {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.price {
+  margin-right: 31px;
+  font-weight: 500;
+}
+
+.background {
+  background-color: #f4f6f8;
+  padding-bottom: 80px;
+}
+
+.arrivals {
+  background-color: #f4f6f8;
+  margin-top: 120px;
+}
+
+.title {
+  width: 244px;
+  height: 25px;
+  font-size: 36px;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-weight: 600;
+  color: #34404b;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.red {
+  color: #ff5912;
+  margin-right: 3px;
+}
+
+.someMoreWord {
+  line-height: 30px;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-weight: 400;
+  font-size: 16px;
+  color: #495662;
+  height: 16px;
+  margin: 0 auto;
+  width: 546px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.showItem {
+  width: 25%;
+  height: 365px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px;
+}
+
+.itemImg {
+  height: 240px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+.itemName {
+  height: 13px;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 23px;
+}
+
+.itemPrice {
+  height: 14px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.dots {
+  height: 8px;
+  width: 35px;
+  margin: 0 auto;
+}
+
+.loadMore {
+  height: 60px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 120px;
+}
+
+.titleSales {
+  width: 187px;
+  height: 25px;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  color: #ff5912;
+  margin-bottom: 30px;
+}
+
+.blackColor {
+  color: #34404b;
+  margin-left: 3px;
+}
+
+.salesDescriptions {
+  width: 250px;
+  margin: 0 auto;
+  height: 16px;
+  color: #495662;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 29.99px;
+}
+
+
+
+.salesItem {
+  width: 340px;
+  height: 160px;
+  background-color: #ffffff;
+  padding: 10px;
+  padding-left: 28px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.salesItemTitle{
+  margin-top: 35px;
+}
+.salesItemImage {
+  height: 150px;
+  width: 120px;
+}
+
+.salesItemDescription {
+  width: 167px;
+  height: 35px;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.salesItemPrice {
+  width: 35px;
+  height: 17px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 38px;
+  font-weight: 700;
+  margin-top: 6px;
+  margin-left: 26px;
+}
+
+.salesPos{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-top: 50px;
+}
