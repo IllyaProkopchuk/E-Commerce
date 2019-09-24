@@ -1,7 +1,6 @@
 .container {
   min-height: 300px;
   padding-top: 120px;
-  border: 1px solid green;
   display: flex;
   flex-direction: row;
 }
@@ -16,6 +15,7 @@
 
 .productsPart {
   width: 880px;
+  margin-left: 31px;
 }
 
 .categoriesBlock {
@@ -101,34 +101,110 @@ ul li :nth-last-of-type(1) {
   margin-right: 20px;
 }
 
-.priceFilterHead{
-    margin-bottom: 39px;
-    width: 118px;
-    height: 15px;
-    color: #ff5912;
-    font-family: "Harmonia Sans Pro Cyr Bold";
-    font-size: 22px;
-    font-weight: 400;
+.priceFilterHead {
+  margin-bottom: 39px;
+  width: 118px;
+  height: 15px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 22px;
+  font-weight: 400;
 }
 
-.size li{
-    list-style-type: square;
-}
-.marg{
-    margin-bottom: 1px;
-}
-.radiobut{
-    margin-bottom: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-label{
-    color: #34404b;
-    font-family: "Harmonia Sans Pro Cyr";
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 50px;
+.size li {
+  list-style-type: square;
 }
 
+.marg {
+  margin-bottom: 1px;
+}
 
+.radiobut {
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
+label {
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.productShow {
+  width: 240px;
+  height: 380px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.imgBox {
+  width: 240px;
+  height: 280px;
+}
+
+.productName {
+  height: 13px;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 20px;
+}
+
+.productPrice {
+  height: 14px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.showMore {
+  width: 871px;
+  height: 60px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.imgDot {
+  display: block;
+  margin: 0 auto;
+  padding: 26px;
+}
+
+::ng-deep {
+  .custom-slider .ng5-slider {
+    .ng5-slider-bar {
+      height: 2px;
+    }
+
+    .ng5-slider-pointer {
+      background-color: black !important;
+      font-size: 6px;
+      width: 10px !important;
+      height: 10px !important;
+      top: -5px !important;
+    }
+
+    .ng5-slider-selection {
+      background: rgb(0, 0, 0) !important;
+    }
+
+    .ng5-slider-pointer:after {
+      display: none;
+    }
+  }
+
+}

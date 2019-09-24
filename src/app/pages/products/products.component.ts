@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Options, LabelType } from 'ng5-slider';
-import { Ng5SliderModule } from 'ng5-slider';
 
 
 @Component({
