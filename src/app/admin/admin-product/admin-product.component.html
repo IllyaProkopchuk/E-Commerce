@@ -1,0 +1,138 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="productsForm.id">
+  <div class="form-group">
+    <label for="exampleFormControlSelect1" class="mb-2">Category</label>
+    <select [(ngModel)]="productsForm.category" #qqq="ngModel" name="category" class="form-control"
+      id="exampleFormControlSelect1" required>
+      <option value="" disabled>Select Something</option>
+      <option *ngFor="let cat of category">{{cat.name}}</option>
+    </select>
+    <div *ngIf="qqq.invalid && qqq.touched">Select something</div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1" class="mb-2">Brand</label>
+    <select [(ngModel)]="productsForm.brand" #www="ngModel" name="brand" class="form-control"
+      id="exampleFormControlSelect1" required>
+      <option value="" disabled>Select Something</option>
+      <option *ngFor="let br of brand">{{br.name}}</option>
+    </select>
+    <div *ngIf="www.invalid && www.touched">Select something</div>
+  </div>
+  <div class="form-group">
+    <label for="name" class="mb-2">Name </label>
+    <input [(ngModel)]="productsForm.name" #eee="ngModel" name="name" class="form-control" type="text" id="name"
+      placeholder="Name here" required>
+    <div *ngIf="eee.invalid && eee.touched">Fill in this field</div>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1" class="mb-2">Description</label>
+    <textarea [(ngModel)]="productsForm.description" #rrr="ngModel" name="description" class="form-control"
+      id="exampleFormControlTextarea1" rows="3" placeholder="Description here" required></textarea>
+    <div *ngIf="rrr.invalid && rrr.touched">Fill in this field</div>
+  </div>
+  <div class="form-group">
+    <label for="price" class="mb-2">Price($)</label>
+    <input [(ngModel)]="productsForm.price" #ttt="ngModel" name="price" class="form-control" type="number" id="price"
+      placeholder="Price here" required>
+    <div *ngIf="ttt.invalid && ttt.touched">Fill in this field</div>
+  </div>
+  <div class="form-group ">
+    <p class="mb-3">Select present sizes</p>
+    <div class="form-check form-check-inline mr-5">
+      <input [(ngModel)]="productsForm.xs" name="xs" class="form-check-input" type="checkbox" id="inlineCheckbox1"
+        value="option1">
+      <label class="form-check-label" for="inlineCheckbox1">XS</label>
+    </div>
+    <div class="form-check form-check-inline mr-5">
+      <input [(ngModel)]="productsForm.s" name="s" class="form-check-input" type="checkbox" id="inlineCheckbox2"
+        value="option1">
+      <label class="form-check-label" for="inlineCheckbox2">S</label>
+    </div>
+    <div class="form-check form-check-inline mr-5">
+      <input [(ngModel)]="productsForm.m" name="m" class="form-check-input" type="checkbox" id="inlineCheckbox3"
+        value="option1">
+      <label class="form-check-label" for="inlineCheckbox3">M</label>
+    </div>
+    <div class="form-check form-check-inline mr-5">
+      <input [(ngModel)]="productsForm.l" name="l" class="form-check-input" type="checkbox" id="inlineCheckbox4"
+        value="option1">
+      <label class="form-check-label" for="inlineCheckbox4">L</label>
+    </div>
+    <div class="form-check form-check-inline mr-5">
+      <input [(ngModel)]="productsForm.xl" name="xl" class="form-check-input" type="checkbox" id="inlineCheckbox5"
+        value="option1">
+      <label class="form-check-label" for="inlineCheckbox5">XL</label>
+    </div>
+  </div>
+  <div>
+    <h5 class="card-title">Select a file for upload:</h5>
+    <input type="file" (change)="upload($event)" accept=".png,.jpg" />
+    <br><br>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+        [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0"
+        aria-valuemax="100"></div>
+    </div>
+    <br>
+    <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+      File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
+      <input type="text" [value]="downloadSrc" [(ngModel)]="downloadSrc" name="photo">
+    </div>
+    <!-- <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+      File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
+    </div> -->
+    <br>
+    <div class="btn-group" role="group" *ngIf="uploadState | async; let state">
+      <button type="button" class="btn btn-primary" (click)="task.pause()"
+        [disabled]="state === 'paused'">Pause</button>
+      <button type="button" class="btn btn-primary" (click)="task.cancel()"
+        [disabled]="!(state === 'paused' || state === 'running')">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="task.resume()"
+        [disabled]="state === 'running'">Resume</button>
+    </div>
+  </div>
+  <button class="btn btn-block btn-dark" type="submit">Add Product</button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">XS</th>
+      <th scope="col">S</th>
+      <th scope="col">M</th>
+      <th scope="col">L</th>
+      <th scope="col">XL</th>
+      <th scope="col">Photo</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prod of products; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{prod.name}}</td>
+      <td>{{prod.category}}</td>
+      <td>{{prod.brand}}</td>
+      <td>{{prod.description}}</td>
+      <td>${{prod.price}}</td>
+      <td>{{prod.xs}}</td>
+      <td>{{prod.s}}</td>
+      <td>{{prod.m}}</td>
+      <td>{{prod.l}}</td>
+      <td>{{prod.xl}}</td>
+      <td class="size"><img class="size" [src]="prod.photo" alt=""></td>
+      <td>
+        <button class="btn btn-warning" (click)="editProducts(prod)">Edit</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteProducts(prod.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

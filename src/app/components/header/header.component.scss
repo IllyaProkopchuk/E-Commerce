@@ -1,4 +1,3 @@
-//top header
 .smallHeader {
   height: 60px;
   color: #34404b;
@@ -40,7 +39,7 @@
 
 $border-color: #e6e8eb;
 $activeColor:#ff5912;
-;
+
 
 .bigHeader {
   height: 120px;
@@ -99,6 +98,6 @@ a:hover {
   height: 17px;
 }
 
-.menuRight{
-    // margin-top: 55px;
+.activeNow{
+  color: #ff5912;
 }

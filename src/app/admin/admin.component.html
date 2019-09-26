@@ -1,1 +1,18 @@
-<p>admin works!</p>
+<div class="body">
+  <div class="container p-2">
+    <div class="row">
+      <div class="col-2">
+        <div class="nav flex-column nav-pills">
+          <a class="nav-link" routerLink="category" routerLinkActive="active">Category</a>
+          <a class="nav-link" routerLink="brand" routerLinkActive="active">Brand</a>
+          <a class="nav-link" routerLink="product" routerLinkActive="active">Products</a>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="tab-content" id="v-pills-tabContent">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

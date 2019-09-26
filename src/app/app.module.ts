@@ -1,7 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
+import { MatInputModule } from '@angular/material/input';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { MatIconModule } from "@angular/material/icon"; 
+import { ReactiveFormsModule} from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +26,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
+import { AdminBrandComponent } from './admin/admin-brand/admin-brand.component';
+import { AdminProductComponent } from './admin/admin-product/admin-product.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -34,7 +44,11 @@ import { environment } from '../environments/environment';
     AdminComponent,
     LoginComponent,
     BasketComponent,
-    AboutComponent
+    AboutComponent,
+    AdminCategoryComponent,
+    AdminBrandComponent,
+    AdminProductComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,9 +58,17 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     FormsModule,
-    Ng5SliderModule
+    Ng5SliderModule,
+    HttpClientModule,
+    BrowserAnimationsModule,   
+    MatInputModule,
+    MaterialFileInputModule,
+    MatIconModule,
+    ReactiveFormsModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

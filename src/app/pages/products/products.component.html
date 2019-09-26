@@ -3,10 +3,8 @@
     <div class="filerPart">
       <div class="categoriesBlock">
         <p class="catTitle">Categories</p>
-        <ul>
-          <li>Man</li>
-          <li>Woman</li>
-          <li>Childrens</li>
+        <ul *ngFor="let cat of category">
+          <li>{{cat.name}}</li>
         </ul>
       </div>
       <div class="priceFilter">
@@ -21,89 +19,28 @@
       </div>
       <div class="sizesBlock">
         <p class="catTitle marg">Sizes</p>
-        <input type="checkbox" id="checkbox-b" name="checkbox" class="radiobut"><label
-          for="checkbox-b">Small</label><br>
-        <input type="checkbox" name="rr" class="radiobut"><label>Medium</label><br>
-        <input type="checkbox" name="rr" class="radiobut"><label>Large</label><br>
-        <input type="checkbox" name="rr" class="radiobut"><label>X Large</label><br>
+        <input type="checkbox" id="checkbox0" name="checkbox" class="radiobut"><label
+          for="checkbox0">Small</label><br>
+        <input type="checkbox"  id="checkbox1" name="rr" class="radiobut"><label for="checkbox1">Medium</label><br>
+        <input type="checkbox"  id="checkbox2" name="rr" class="radiobut"><label for="checkbox2">Large</label><br>
+        <input type="checkbox"  id="checkbox3" name="rr" class="radiobut"><label for="checkbox3">X Large</label><br>
       </div>
       <div class="brandsBlock">
         <p class="catTitle marg">Brands</p>
-        <input type="checkbox" id="checkbox-b" name="checkbox" class="radiobut"><label
-          for="checkbox-b">Reebok</label><br>
-        <input type="checkbox" name="rr" class="radiobut"><label>Addidas</label><br>
-        <input type="checkbox" name="rr" class="radiobut"><label>Nike</label><br>
-        <input type="checkbox" name="rr" class="radiobut"><label>Hilfiger</label><br>
-
+        <div *ngFor="let br of brand">
+          <input type="checkbox" name="rr" [id]=br.name class="radiobut"><label [for]=br.name>{{br.name}}</label><br>
+        </div>
       </div>
     </div>
     <div class="productsPart">
       <div class="flex">
-        <div class="productShow">
+        <div class="productShow" *ngFor="let prod of products">
           <div><img
-              src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FLifestyle%20Track%20Top.jpg?alt=media&token=0b1e0c05-9a5b-42a4-b579-5e6d36adf6ec"
+              [src]="prod.photo"
               alt="" class="imgBox"></div>
-          <p class="productName">Reebok Lifestyle Track Top</p>
-          <p class="productPrice">$35.99</p>
+          <p class="productName">{{prod.name}}</p>
+          <p class="productPrice">${{prod.price}}</p>
         </div>
-        <div class="productShow">
-          <div><img
-              src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2Freebok%20CL%20V%20Track%20Top.jpg?alt=media&token=00f4d10c-d06f-4d97-96a8-59718ff2126f"
-              alt="" class="imgBox"></div>
-          <p class="productName">Reebok CL V Track Top</p>
-          <p class="productPrice">$64.99</p>
-        </div>
-        <div class="productShow">
-          <div><img
-              src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2Freebok%20track%20jacket.jpg?alt=media&token=9228e87d-7539-4a53-ab8c-b69828a5169d"
-              alt="" class="imgBox"></div>
-          <p class="productName">Reebok Track Jacket</p>
-          <p class="productPrice">$59.99</p>
-        </div>
-        <div class="productShow">
-          <div><img
-              src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FHB%20weave.jpg?alt=media&token=a8cb055a-4ec8-4097-8965-9dcdb6841f06"
-              alt="" class="imgBox"></div>
-          <p class="productName">BOSS Hugo Boss Weave</p>
-          <p class="productPrice">$97.99</p>
-        </div>
-        <div class="productShow">
-          <div><img
-              src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FHB%20Graphic%20Pool%20T-Shirt.jpg?alt=media&token=36a0f037-06f0-4aa2-a667-ef607300db77"
-              alt="" class="imgBox"></div>
-          <p class="productName">Hugo Boss Graphic Pool </p>
-          <p class="productPrice">$42.99</p>
-        </div>
-        <div class="productShow">
-          <div><img
-              src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FHB%20Leeman.jpg?alt=media&token=24eb2a2e-9ddb-436f-9148-0f3c97357c53"
-              alt="" class="imgBox"></div>
-          <p class="productName">Hugo Boss Leeman</p>
-          <p class="productPrice">$62.99</p>
-        </div>
-        <div class="productShow">
-          <div><img
-              src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FHB%20Wolflike.jpg?alt=media&token=dd61be77-e088-4321-931d-11f058e8fe9e"
-              alt="" class="imgBox"></div>
-          <p class="productName">Hugo Boss Wolflike</p>
-          <p class="productPrice">$89.99</p>
-        </div>
-        <div class="productShow">
-          <div><img
-              src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FHB%20Kasteli.jpg?alt=media&token=325a7676-dab6-47e7-9d8f-def97a6656e0"
-              alt="" class="imgBox"></div>
-          <p class="productName">Hugo Boss Kasteli</p>
-          <p class="productPrice">$79.99</p>
-        </div>
-        <div class="productShow">
-          <div><img
-              src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FHB%20Cut%20Seam%20Crew.jpg?alt=media&token=f30a8f50-126a-43fa-a360-45317d757df8"
-              alt="" class="imgBox"></div>
-          <p class="productName">Hugo Boss Cut Seam Crew </p>
-          <p class="productPrice">$62.99</p>
-        </div>
-
-
       </div>
       <div class="showMore"><img
           src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FDots.png?alt=media&token=18c6d1fa-e106-4501-8f78-f3b8eb0a3a8e"
