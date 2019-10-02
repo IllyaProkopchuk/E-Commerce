@@ -1,16 +1,39 @@
 <div class="body">
   <div class="flex">
     <div class="loginPart">
-      <div class="innerLogin">
+      <div class="innerLogin" [hidden]="checker">
         <p class="singIn">Sign In</p>
         <div>
-          <input type="text" class="form-control" aria-label="Sizing example input"
+          <input type="email" class="form-control" aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-default" placeholder="Email">
           <input type="password" class="form-control" aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-default" placeholder="Password">
         </div>
-        <div class="myBtn"><p class="text">Sign In</p></div>
-        <div class="singUp"><p class="signUpText">Create Account</p></div>
+        <div class="myBtn">
+          <p class="text">Sign In</p>
+        </div>
+        <div class="singUp" (click)="openCreateAccountPart()">
+          <p class="signUpText">Create Account</p>
+        </div>
+      </div>
+      <div class="innerCreate" [hidden]="!checker">
+        <p class="createText">Create Account</p>
+        <div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" placeholder="First Name">
+          <input type="text" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" placeholder="Second Name">
+          <input type="email" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" placeholder="Email">
+          <input type="password" class="form-control" aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default" placeholder="Password">
+        </div>
+        <div class="myBtn newPos">
+          <p class="text po">Create Account</p>
+        </div>
+        <div class="singUp" (click)="openCreateAccountPart()">
+          <p class="signUpText pos">Sign In</p>
+        </div>
       </div>
     </div>
     <div class="photoPart">

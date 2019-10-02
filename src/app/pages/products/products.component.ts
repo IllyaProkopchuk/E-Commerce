@@ -15,15 +15,25 @@ import { ProductsService } from 'src/app/shared/services/products.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  minValue: number = 50;
+  minValue: number = 20;
   maxValue: number = 300;
   options: Options = {
     floor: 0,
     ceil: 400
   };
+  search: string = '';
+  brandFilter: string = '';
   category: Array<ICategory>;
   brand: Array<IBrand>;
   products: Array<IProducts>;
+  counterForCategory: boolean = true;
+  counterForBrand: boolean = true;
+  sizes: string = '';
+  xs: boolean = true;
+  s: boolean = true;
+  m: boolean = true;
+  l: boolean = true;
+  xl: boolean = true;
 
   constructor(private categoryService: CategoryService,
     private brandService: BrandService,
@@ -35,6 +45,78 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  public xsmall() {
+    if (this.xs) {
+      this.xs = false;
+    }
+    else {
+      this.xs = true;
+    }
+  }
+  public small() {
+    if (this.s) {
+      this.sizes = 'small';
+      this.s = false;
+    }
+    else {
+      this.search = '';
+      this.s = true;
+    }
+  }
+  public medium() {
+    if (this.m) {
+      this.sizes = 'medium';
+      this.m = false;
+    }
+    else {
+      this.search = '';
+      this.m = true;
+    }
+  }
+  public large() {
+    if (this.l) {
+      this.sizes = 'large';
+      this.l = false;
+    }
+    else {
+      this.search = '';
+      this.l = true;
+    }
+  }
+  public xlarge() {
+    if (this.xl) {
+      this.sizes = 'xlarge';
+      this.xl = false;
+    }
+    else {
+      this.search = '';
+      this.xl = true;
+    }
+  }
+
+  public getValue(name) {
+    if (this.counterForCategory) {
+      this.search = name;
+      this.counterForCategory = false;
+    }
+    else {
+      this.search = '';
+      this.counterForCategory = true;
+    }
+  }
+
+  public brandFiltration(name) {
+    console.log(name);
+    if (this.counterForBrand) {
+      this.brandFilter = name;
+      this.counterForBrand = false;
+    }
+    else {
+      this.brandFilter = '';
+      this.counterForBrand = true;
+    }
   }
 
   private getCatData() {

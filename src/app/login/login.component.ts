@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  checker: boolean;
   constructor() { }
 
   ngOnInit() {
   }
 
+  public openCreateAccountPart(): void {
+    this.checker = !this.checker;
+  }
 }

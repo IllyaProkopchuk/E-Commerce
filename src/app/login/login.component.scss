@@ -19,7 +19,8 @@
   text-align: center;
 }
 
-.innerLogin {
+.innerLogin,
+.innerCreate {
   width: 400px;
   height: 400px;
   margin-top: 100px;
@@ -32,6 +33,16 @@
 
 .singIn {
   height: 45px;
+  color: #3c4751;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 52px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.createText {
+  height: 85px;
   color: #3c4751;
   font-family: "Harmonia Sans Pro Cyr Bold";
   font-size: 52px;
@@ -59,6 +70,10 @@ input {
   cursor: pointer;
 }
 
+.newPos{
+  width: 250px;
+}
+
 .text {
   display: block;
   margin: 0 auto;
@@ -68,25 +83,33 @@ input {
   top: 13px;
   left: 50px;
 }
-
-.singUp{
-    height: 40px;
-    border: 1px solid #ff5912;
-    border-radius: 3px;
-    position: relative;
-    color: #ff5912;
+.po{
+  width: 160px;
 }
 
-.signUpText{
-    font-family: "Harmonia Sans Pro Cyr Bold";
-    font-size: 22px;
-    font-weight: 600;
-    position: absolute;
-    top: 7px;
-    left: 117px;
-    cursor: pointer;
+.singUp {
+  height: 40px;
+  border: 1px solid #ff5912;
+  border-radius: 3px;
+  position: relative;
+  color: #ff5912;
 }
+
+.signUpText {
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 22px;
+  font-weight: 600;
+  position: absolute;
+  top: 7px;
+  left: 117px;
+  cursor: pointer;
+}
+
+.pos {
+  left: 160px;
+}
+
 .singUp:hover {
-    color: #ffffff;
-    background-color: #ff5912;
+  color: #ffffff;
+  background-color: #ff5912;
 }

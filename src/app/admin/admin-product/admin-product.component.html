@@ -1,5 +1,5 @@
 <form #form="ngForm" (submit)="onSubmit(form)">
-  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="productsForm.id">
+  <input type="text" name="id" #id="ngModel" [(ngModel)]="productsForm.id">
   <div class="form-group">
     <label for="exampleFormControlSelect1" class="mb-2">Category</label>
     <select [(ngModel)]="productsForm.category" #qqq="ngModel" name="category" class="form-control"
@@ -76,7 +76,7 @@
     <br>
     <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
       File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
-      <input type="text" [value]="downloadSrc" [(ngModel)]="downloadSrc" name="photo">
+      <input class="op" type="text" [value]="downloadSrc" [(ngModel)]="downloadSrc" name="photo">
     </div>
     <!-- <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
       File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
@@ -119,13 +119,23 @@
       <td>{{prod.name}}</td>
       <td>{{prod.category}}</td>
       <td>{{prod.brand}}</td>
-      <td>{{prod.description}}</td>
+      <td class="des">{{prod.description}}</td>
       <td>${{prod.price}}</td>
-      <td>{{prod.xs}}</td>
-      <td>{{prod.s}}</td>
-      <td>{{prod.m}}</td>
-      <td>{{prod.l}}</td>
-      <td>{{prod.xl}}</td>
+      <td>
+        <input type="checkbox" [checked]="prod.xs" disabled>
+      </td>
+      <td>
+        <input type="checkbox" [checked]="prod.s" disabled>
+      </td>
+      <td>
+        <input type="checkbox" [checked]="prod.m" disabled>
+      </td>
+      <td>
+        <input type="checkbox" [checked]="prod.l" disabled>
+      </td>
+      <td>
+        <input type="checkbox" [checked]="prod.xl" disabled>
+      </td>
       <td class="size"><img class="size" [src]="prod.photo" alt=""></td>
       <td>
         <button class="btn btn-warning" (click)="editProducts(prod)">Edit</button>

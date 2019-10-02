@@ -30,7 +30,11 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { AdminBrandComponent } from './admin/admin-brand/admin-brand.component';
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ProductsPipe } from './pipes/products.pipe';
+import { BrandPipe } from './pipes/brand.pipe';
+import { PricePipe } from './pipes/price.pipe';
+import { SizePipe } from './pipes/size.pipe';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 
 @NgModule({
@@ -48,6 +52,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminCategoryComponent,
     AdminBrandComponent,
     AdminProductComponent,
+    ProductsPipe,
+    BrandPipe,
+    PricePipe,
+    SizePipe,
+    ProductDetailsComponent,
 
   ],
   imports: [

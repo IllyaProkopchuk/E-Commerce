@@ -14,5 +14,10 @@ export class ProductsService {
   public getProducts() {
     return this.fireStore.collection('products').snapshotChanges();
   }
+  
+  public getOneProduct(id: string) {
+    return this.fireStore.collection(`products`).doc(id).snapshotChanges();
+  }
+
 }
 

@@ -20,7 +20,7 @@
 
 .categoriesBlock {
   width: 268px;
-  height: 242px;
+  min-height: 242px;
   background-color: #ffffff;
   padding: 41px;
 }
@@ -35,7 +35,7 @@
 
 .sizesBlock {
   width: 268px;
-  height: 302px;
+  min-height: 302px;
   background-color: #ffffff;
   margin-top: 29px;
   padding: 41px;
@@ -43,7 +43,7 @@
 
 .brandsBlock {
   width: 268px;
-  height: 302px;
+  min-height: 302px;
   background-color: #ffffff;
   margin-top: 31px;
   padding: 41px;
@@ -209,6 +209,76 @@ label {
 
 }
 
-.radiobut, label{
+.radiobut,
+label {
   cursor: pointer;
+}
+.phBox{
+  width: 140px;
+  margin: 0 auto;
+}
+.imgHoverBox {
+  width: 140px;
+  // height: 87px;
+  margin-top: 35px;
+  margin-bottom: 31px;
+}
+
+.productHoverName {
+  height: 13px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 31px;
+}
+
+span{
+  margin-right: 5px;
+}
+.sizeHover{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.whenHover{
+  display: none;
+}
+
+.productShow:hover{
+  .notHover{
+    display: none;
+  }
+  .whenHover{
+    display: block;
+  }
+}
+
+.myBtn{
+  width: 110px;
+  height: 30px;
+  border: 1px solid #ff5912;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.myBtn:hover{
+  background-color:#ff5912;
+  color: #ffffff;
+}
+.innerText{
+  margin-top: 5px;
+  text-align: center;
+}
+.rows{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50px;
+  width: 150px;
+  margin: 0 auto; 
 }

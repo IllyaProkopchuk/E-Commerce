@@ -1,0 +1,122 @@
+.body {
+  background-color: #ffffff;
+  height: 560px;
+  padding-top: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.imgPart {
+  height: 500px;
+  width: 40%;
+}
+
+img {
+  height: 500px;
+}
+
+.aboutPart {
+  width: 60%;
+  height: 500px;
+  padding-top: 50px;
+}
+
+.name {
+  height: 70px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 56px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  height: 120px;
+  color: #495662;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 29.97px;
+  text-align: justify;
+}
+
+span {
+  margin-right: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+span:hover {
+  color: #ff5912;
+  font-size: 20px;
+
+}
+
+.choose {
+  height: 13px;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.price {
+  margin-top: 15px;
+  height: 17px;
+  color: #34404b;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.imgIcon {
+  width: 22px;
+  height: 21px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.myBtn {
+  width: 134px;
+  height: 49px;
+  border-radius: 25px;
+  background-color: #ff5912;
+  position: relative;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.innerText {
+  width: 87px;
+  height: 13px;
+  color: #ffffff;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  top: 15px;
+  left: 23px;
+}
+.back{
+    cursor: pointer;
+    height: 60px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}

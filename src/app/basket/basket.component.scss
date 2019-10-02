@@ -1,0 +1,33 @@
+
+.body {
+  background: #f4f6f8;
+  min-height: 400px;
+  padding-top: 50px;
+}
+
+.leftPart {
+  width: 60%;
+  min-height: 200px;
+}
+
+.rightPart {
+  width: 40%;
+}
+
+.showProduct {
+  width: 100%;
+  height: 250px;
+  border: 1px solid black;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+.photoPart{
+    width: 100px;
+    height: 200px;
+    // margin-left: 10px;
+}
+.productHead{
+    width: 100%;
+    height: 50px;
+}
