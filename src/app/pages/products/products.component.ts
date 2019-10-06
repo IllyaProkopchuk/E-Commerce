@@ -9,31 +9,41 @@ import { IProducts } from 'src/app/shared/interfaces/products.interface';
 import { ProductsService } from 'src/app/shared/services/products.service';
 
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  minValue: number = 20;
-  maxValue: number = 300;
+  minValue: number = 5;
+  maxValue: number = 100;
   options: Options = {
     floor: 0,
-    ceil: 400
+    ceil: 120
   };
+
+  mySize: string = '1210px';
+
   search: string = '';
   brandFilter: string = '';
+
   category: Array<ICategory>;
   brand: Array<IBrand>;
   products: Array<IProducts>;
+
   counterForCategory: boolean = true;
   counterForBrand: boolean = true;
   sizes: string = '';
+
   xs: boolean = true;
   s: boolean = true;
   m: boolean = true;
   l: boolean = true;
   xl: boolean = true;
+
+  loadIndex: number = 8;
+  hideShowMore: boolean = true;
 
   constructor(private categoryService: CategoryService,
     private brandService: BrandService,
@@ -45,6 +55,16 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+
+  public showMore(): void {
+    if (this.loadIndex < this.products.length) {
+      this.loadIndex += 3;
+    }
+    if (this.loadIndex + 1 >= this.products.length) {
+      this.hideShowMore = false;
+    }
   }
 
   public xsmall() {
@@ -110,13 +130,14 @@ export class ProductsComponent implements OnInit {
   public brandFiltration(name) {
     console.log(name);
     if (this.counterForBrand) {
-      this.brandFilter = name;
+    this.brandFilter = name;
       this.counterForBrand = false;
     }
     else {
       this.brandFilter = '';
       this.counterForBrand = true;
     }
+
   }
 
   private getCatData() {
@@ -157,4 +178,5 @@ export class ProductsComponent implements OnInit {
       }
     );
   }
+
 }

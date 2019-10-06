@@ -1,5 +1,5 @@
 <form #form="ngForm" (submit)="onSubmit(form)">
-  <input type="text" name="id" #id="ngModel" [(ngModel)]="productsForm.id">
+  <input type="text" name="id" #id="ngModel" [(ngModel)]="productsForm.id" class="op">
   <div class="form-group">
     <label for="exampleFormControlSelect1" class="mb-2">Category</label>
     <select [(ngModel)]="productsForm.category" #qqq="ngModel" name="category" class="form-control"
@@ -33,7 +33,7 @@
   <div class="form-group">
     <label for="price" class="mb-2">Price($)</label>
     <input [(ngModel)]="productsForm.price" #ttt="ngModel" name="price" class="form-control" type="number" id="price"
-      placeholder="Price here" required>
+      placeholder="Price here" required  step="0.01" min="0">
     <div *ngIf="ttt.invalid && ttt.touched">Fill in this field</div>
   </div>
   <div class="form-group ">
@@ -101,7 +101,7 @@
       <th scope="col">Name</th>
       <th scope="col">Category</th>
       <th scope="col">Brand</th>
-      <th scope="col">Description</th>
+      <!-- <th scope="col">Description</th> -->
       <th scope="col">Price</th>
       <th scope="col">XS</th>
       <th scope="col">S</th>
@@ -119,7 +119,7 @@
       <td>{{prod.name}}</td>
       <td>{{prod.category}}</td>
       <td>{{prod.brand}}</td>
-      <td class="des">{{prod.description}}</td>
+      <!-- <td class="des">{{prod.description}}</td> -->
       <td>${{prod.price}}</td>
       <td>
         <input type="checkbox" [checked]="prod.xs" disabled>

@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
 import { MatInputModule } from '@angular/material/input';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
-import { MatIconModule } from "@angular/material/icon"; 
-import { ReactiveFormsModule} from '@angular/forms';
+import { MatIconModule } from "@angular/material/icon";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +36,9 @@ import { PricePipe } from './pipes/price.pipe';
 import { SizePipe } from './pipes/size.pipe';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
+
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
+import { ngxUiLoaderConfig } from './preloader-config';
 
 @NgModule({
   declarations: [
@@ -69,13 +72,15 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     FormsModule,
     Ng5SliderModule,
     HttpClientModule,
-    BrowserAnimationsModule,   
+    BrowserAnimationsModule,
     MatInputModule,
     MaterialFileInputModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule,
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })

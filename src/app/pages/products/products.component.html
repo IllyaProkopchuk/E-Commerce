@@ -4,7 +4,8 @@
       <div class="categoriesBlock">
         <p class="catTitle">Categories</p>
         <ul *ngFor="let cat of category">
-          <input type="checkbox" [id]="cat.name" name="rr"  (click)="getValue(cat.name)" class="radiobut"><label [for]="cat.name">{{cat.name}}</label>
+          <input type="checkbox" [id]="cat.name" name="rr" (click)="getValue(cat.name)" class="radiobut"><label
+            [for]="cat.name">{{cat.name}}</label>
         </ul>
       </div>
       <div class="priceFilter">
@@ -41,7 +42,8 @@
     <div class="productsPart">
       <div class="flex">
         <div class="productShow"
-          *ngFor="let prod of products| products:search | brand: brandFilter  | size: xs: s: m: l: xl | price: minValue: maxValue">
+          *ngFor="let prod of products| products:search | brand: brandFilter  | size: xs: s: m: l: xl | price: minValue: maxValue ; let i=index"
+          [hidden]="i > loadIndex">
           <div class="notHover">
             <div><img [src]="prod.photo" alt="" class="imgBox"></div>
             <p class="productName">{{prod.name}}</p>
@@ -53,7 +55,7 @@
             <p class="sizeHover">Sizes: <span *ngIf="prod.xs">xs</span><span *ngIf="prod.s">s</span>
               <span *ngIf="prod.m">m</span><span *ngIf="prod.l">l</span><span *ngIf="prod.xl">xl</span></p>
             <div class="rows">
-              <div class="myBtn"  [routerLink]="[ '/products', prod.id ]">
+              <div class="myBtn" [routerLink]="[ '/products', prod.id ]">
                 <p class="innerText">More details</p>
               </div>
               <div><img
@@ -64,7 +66,7 @@
           </div>
         </div>
       </div>
-      <div class="showMore"><img
+      <div class="showMore" (click)="showMore()" [hidden]="!hideShowMore"><img
           src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FDots.png?alt=media&token=18c6d1fa-e106-4501-8f78-f3b8eb0a3a8e"
           alt="" class="imgDot"></div>
     </div>

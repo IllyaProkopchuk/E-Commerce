@@ -7,9 +7,6 @@ export class SizePipe implements PipeTransform {
 
   transform(arr: Array<any>, xs: boolean, s: boolean, m: boolean, l: boolean, xl: boolean): any {
     let newArr: Array<any> = [];
-    console.log("xs", xs);
-    console.log("s", s);
-    console.log("m", m);
 
     if (xs && s && m && l && xl) {
       newArr = arr;
@@ -29,7 +26,8 @@ export class SizePipe implements PipeTransform {
     if (xl === false) {
       newArr = arr.filter(str => str.xl === true);
     }
-    return newArr;
+    arr = newArr;
+    return arr;
   }
 
 }

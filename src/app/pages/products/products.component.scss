@@ -16,6 +16,7 @@
 .productsPart {
   width: 880px;
   margin-left: 31px;
+  overflow: hidden;
 }
 
 .categoriesBlock {
@@ -144,6 +145,8 @@ label {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  // height: 1210px;
+  overflow: hidden;
 }
 
 .imgBox {
@@ -152,7 +155,7 @@ label {
 }
 
 .productName {
-  height: 13px;
+  height: 20px;
   color: #34404b;
   font-family: "Harmonia Sans Pro Cyr";
   font-size: 18px;
@@ -160,6 +163,7 @@ label {
   text-align: center;
   margin-top: 32px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .productPrice {
