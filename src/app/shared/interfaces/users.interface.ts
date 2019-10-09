@@ -10,4 +10,6 @@ export interface IUsers{
     street: string;
     buildingNumber: number;
     phone: string;
+    bag: Array<any>;
+    login: boolean;
 }

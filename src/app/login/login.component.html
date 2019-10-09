@@ -22,6 +22,7 @@
         <div>
           <form #form="ngForm" (submit)="onSubmit(form)">
             <input type="text" name="id" id="id" #id="ngModel" [(ngModel)]="usersForm.id" class="op">
+            <input type="checkbox" class="op" name="login" id="login" [(ngModel)]="usersForm.login">
             <input type="email" id="email" class="form-control" aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-default" placeholder="Email" [(ngModel)]="usersForm.email"
               name="email" #qqq="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
@@ -72,7 +73,6 @@
               aria-describedby="inputGroup-sizing-default" placeholder="Phone number" [(ngModel)]="usersForm.phone"
               name="phone" #zzz="ngModel" required id="phone">
             <div *ngIf="zzz.invalid && zzz.touched" class="red">Write you`r phone number</div>
-
             <button class="myBtn newPos" type="submit" [disabled]="form.invalid">Create Account</button>
             <div class="singUp" (click)="openCreateAccountPart()">
               <p class="signUpText pos">Sign In</p>

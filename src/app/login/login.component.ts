@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
     city: '',
     street: '',
     buildingNumber: 0,
-    phone: ''
+    phone: '',
+    login: false
   };
 
   login: string;
@@ -49,7 +50,8 @@ export class LoginComponent implements OnInit {
     city: '',
     street: '',
     buildingNumber: '',
-    phone: ''
+    phone: '',
+    login: false
   }
 
 
@@ -73,7 +75,8 @@ export class LoginComponent implements OnInit {
     this.signInArr = this.users.filter(user => user.email === this.login && user.password === this.password);
     this.obj = this.signInArr[0];
     console.log(this.obj);
-
+    this.obj.login = true;
+  
    if (this.obj) {
       this.hide = true;
       this.login = '';
@@ -108,7 +111,8 @@ export class LoginComponent implements OnInit {
         city: '',
         street: '',
         buildingNumber: '',
-        phone: ''
+        phone: '',
+        login: false
       }
     }
   }

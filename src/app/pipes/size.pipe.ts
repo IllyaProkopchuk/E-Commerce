@@ -1,33 +1,50 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'size'
+  name: 'size',
+  pure: false
 })
 export class SizePipe implements PipeTransform {
 
-  transform(arr: Array<any>, xs: boolean, s: boolean, m: boolean, l: boolean, xl: boolean): any {
-    let newArr: Array<any> = [];
+  transform(products: Array<any>, searchTerm: Array<string>) {
 
-    if (xs && s && m && l && xl) {
-      newArr = arr;
+    const newP = [];
+
+    if (!products) {
+      return [];
     }
-    if (xs === false) {
-      newArr = arr.filter(str => str.xs === true);
+    if (!searchTerm || searchTerm.length === 0) {
+      return products;
     }
-    if (s === false) {
-      newArr = arr.filter(str => str.s === true);
-    }
-    if (m === false) {
-      newArr = arr.filter(str => str.m === true);
-    }
-    if (l === false) {
-      newArr = arr.filter(str => str.l === true);
-    }
-    if (xl === false) {
-      newArr = arr.filter(str => str.xl === true);
-    }
-    arr = newArr;
-    return arr;
+
+    products.filter(product => {
+      searchTerm.map(search => {
+        if (search == 'xs' && product.xs === true) {
+          newP.push(product);
+        }
+        if (search == 's' && product.s === true) {
+          newP.push(product);
+        }
+        if (search == 'm' && product.m === true) {
+          newP.push(product);
+        }
+        if (search == 'l' && product.l === true) {
+          newP.push(product);
+        }
+        if (search == 'xl' && product.xl === true) {
+          newP.push(product);
+        }
+      });
+    });
+    // console.log('last chanse',this.getUnique(newP, 'id'));
+    products = this.getUnique(newP, 'id');
+    return products;
   }
 
+  public getUnique(arr, comp) {
+    const unique = arr.map(e => e[comp])
+      .map((e, i, final) => final.indexOf(e) === i && i)
+      .filter(e => arr[e]).map(e => arr[e]);
+    return unique;
+  }
 }

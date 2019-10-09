@@ -25,24 +25,11 @@ export class ProductsComponent implements OnInit {
 
   searchTerm: Array<string> = [];
   searchBrand: Array<string> = [];
-
-
-
-  search: string = '';
-  brandFilter: string = '';
+  searchSize: Array<string> = [];
 
   category: Array<ICategory>;
   brand: Array<IBrand>;
   products: Array<IProducts>;
-
-  counterForBrand: boolean = true;
-  sizes: string = '';
-
-  xs: boolean = true;
-  s: boolean = true;
-  m: boolean = true;
-  l: boolean = true;
-  xl: boolean = true;
 
   loadIndex: number = 8;
   hideShowMore: boolean = true;
@@ -59,7 +46,6 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
   }
 
-
   public showMore(): void {
     if (this.loadIndex < this.products.length) {
       this.loadIndex += 3;
@@ -69,54 +55,18 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  public xsmall() {
-    if (this.xs) {
-      this.xs = false;
+
+  //-------------Pipes---------------------
+
+  public sizeFind(type: string): void {
+    if (this.searchSize.indexOf(type) === -1) {
+      this.searchSize.push(type);
+    } else {
+      this.searchSize.splice(this.searchSize.indexOf(type), 1);
     }
-    else {
-      this.xs = true;
-    }
+    console.log(this.searchSize);    
   }
-  public small() {
-    if (this.s) {
-      this.sizes = 'small';
-      this.s = false;
-    }
-    else {
-      this.search = '';
-      this.s = true;
-    }
-  }
-  public medium() {
-    if (this.m) {
-      this.sizes = 'medium';
-      this.m = false;
-    }
-    else {
-      this.search = '';
-      this.m = true;
-    }
-  }
-  public large() {
-    if (this.l) {
-      this.sizes = 'large';
-      this.l = false;
-    }
-    else {
-      this.search = '';
-      this.l = true;
-    }
-  }
-  public xlarge() {
-    if (this.xl) {
-      this.sizes = 'xlarge';
-      this.xl = false;
-    }
-    else {
-      this.search = '';
-      this.xl = true;
-    }
-  }
+  
   public typeClothes(type: string): void {
     if (this.searchTerm.indexOf(type) === -1) {
       this.searchTerm.push(type);
@@ -133,6 +83,8 @@ export class ProductsComponent implements OnInit {
     }
   }
 
+
+  //----------------getting data------------
   private getCatData() {
     this.categoryService.getCategory().subscribe(
       myArray => {

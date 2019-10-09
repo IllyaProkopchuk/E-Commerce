@@ -11,6 +11,8 @@ export class Users implements IUsers {
         public city: string,
         public street: string,
         public buildingNumber: number,
-        public phone: string) 
-        {}
+        public phone: string,
+        public login: boolean,
+        public bag: Array<any>
+        ){}
 }

@@ -20,15 +20,15 @@
       </div>
       <div class="sizesBlock">
         <p class="catTitle marg">Sizes</p>
-        <input type="checkbox" id="checkbox4" name="checkbox" class="radiobut" (click)="xsmall()"><label
+        <input type="checkbox" id="checkbox4" name="checkbox" class="radiobut" (click)="sizeFind('xs')"><label
           for="checkbox4">X Small</label><br>
-        <input type="checkbox" id="checkbox0" name="checkbox" class="radiobut" (click)="small()"><label
+        <input type="checkbox" id="checkbox0" name="checkbox" class="radiobut" (click)="sizeFind('s')"><label
           for="checkbox0">Small</label><br>
-        <input type="checkbox" id="checkbox1" name="rr" class="radiobut" (click)="medium()"><label
+        <input type="checkbox" id="checkbox1" name="rr" class="radiobut" (click)="sizeFind('m')"><label
           for="checkbox1">Medium</label><br>
-        <input type="checkbox" id="checkbox2" name="rr" class="radiobut" (click)="large()"><label
+        <input type="checkbox" id="checkbox2" name="rr" class="radiobut" (click)="sizeFind('l')"><label
           for="checkbox2">Large</label><br>
-        <input type="checkbox" id="checkbox3" name="rr" class="radiobut" (click)="xlarge()"><label
+        <input type="checkbox" id="checkbox3" name="rr" class="radiobut" (click)="sizeFind('xl')"><label
           for="checkbox3">XLarge</label><br>
       </div>
       <div class="brandsBlock">
@@ -42,7 +42,7 @@
     <div class="productsPart">
       <div class="flex">
         <div class="productShow"
-          *ngFor="let prod of products| products: searchTerm | brand: searchBrand  | size: xs: s: m: l: xl | price: minValue: maxValue ; let i=index"
+          *ngFor="let prod of products| products: searchTerm | brand: searchBrand | size: searchSize | price: minValue: maxValue ; let i=index"
           [hidden]="i > loadIndex">
           <div class="notHover">
             <div><img [src]="prod.photo" alt="" class="imgBox"></div>

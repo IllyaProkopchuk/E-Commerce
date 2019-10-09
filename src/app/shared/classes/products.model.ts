@@ -13,6 +13,6 @@ export class Products implements IProducts{
         public m: boolean, 
         public l: boolean, 
         public xl: boolean,
-        public photo: string
+        public photo: string,
     ){}
 }
