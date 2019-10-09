@@ -23,7 +23,10 @@ export class ProductsComponent implements OnInit {
     ceil: 120
   };
 
-  mySize: string = '1210px';
+  searchTerm: Array<string> = [];
+  searchBrand: Array<string> = [];
+
+
 
   search: string = '';
   brandFilter: string = '';
@@ -32,7 +35,6 @@ export class ProductsComponent implements OnInit {
   brand: Array<IBrand>;
   products: Array<IProducts>;
 
-  counterForCategory: boolean = true;
   counterForBrand: boolean = true;
   sizes: string = '';
 
@@ -115,29 +117,20 @@ export class ProductsComponent implements OnInit {
       this.xl = true;
     }
   }
-
-  public getValue(name) {
-    if (this.counterForCategory) {
-      this.search = name;
-      this.counterForCategory = false;
-    }
-    else {
-      this.search = '';
-      this.counterForCategory = true;
+  public typeClothes(type: string): void {
+    if (this.searchTerm.indexOf(type) === -1) {
+      this.searchTerm.push(type);
+    } else {
+      this.searchTerm.splice(this.searchTerm.indexOf(type), 1);
     }
   }
 
   public brandFiltration(name) {
-    console.log(name);
-    if (this.counterForBrand) {
-    this.brandFilter = name;
-      this.counterForBrand = false;
+    if (this.searchBrand.indexOf(name) === -1) {
+      this.searchBrand.push(name);
+    } else {
+      this.searchBrand.splice(this.searchBrand.indexOf(name), 1);
     }
-    else {
-      this.brandFilter = '';
-      this.counterForBrand = true;
-    }
-
   }
 
   private getCatData() {
@@ -169,6 +162,7 @@ export class ProductsComponent implements OnInit {
   public getProdData() {
     this.productsService.getProducts().subscribe(
       myArray => {
+        console.log('myArr', myArray);
         this.products = myArray.map(item => {
           return {
             id: item.payload.doc.id,

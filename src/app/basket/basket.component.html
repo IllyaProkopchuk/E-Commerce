@@ -1,19 +1,97 @@
 <div class="body">
   <div class="container">
-    <div class="leftPart">
-      <div class="showProduct">
-        <div class="productHead">
-            
+    <p class="bag">Shopping Bag</p>
+    <div class="flex">
+      <div class="leftPart">
+        <div class="showProduct">
+          <div class="productHead flex">
+            <p class="ml-4 op">Item</p>
+            <div class="flex">
+              <p class="op">Item Price</p>
+              <p class="ml-4 op">Quantity</p>
+              <p class="ml-4 op">Total Price</p>
+            </div>
+          </div>
+          <div class="productBody flex">
+            <div class="left flex">
+              <div class="photoPart">
+                <img style="height: 80px;"
+                  src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/images%2Fa2fgjg1p227?alt=media&token=59532172-dbd8-4608-a74c-b26ade2937f5"
+                  alt="">
+              </div>
+              <div class="aboutPart mt-4">
+                <p>Nike Pro All Over Mesh Tank</p>
+                <p>Brand: <span>Nike</span></p>
+                <p>Size: <span>M</span></p>
+              </div>
+            </div>
+            <div class="rigth flex">
+              <p class="mr-5 mt-4">$69.00</p>
+              <div class="mr-5 mt-4">
+                <select name="" id="">
+                  <option value="" selected>1</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                  <option value="">5</option>
+                  <option value="">6</option>
+                  <option value="">7</option>
+                  <option value="">8</option>
+                  <option value="">9</option>
+                </select>
+              </div>
+              <p class="mt-4">$69.00</p>
+            </div>
+          </div>
         </div>
-        <div class="photoPart">
-          <img style="height: 198px;"
-            src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/images%2F0r9uel3ec8w?alt=media&token=23a32524-316a-4ebb-87ec-0955ecb37e97"
-            alt="">
+        <div class="showProduct">
+          <div class="productHead flex">
+            <p class="ml-4 op">Item</p>
+            <div class="flex">
+              <p class="op">Item Price</p>
+              <p class="ml-4 op">Quantity</p>
+              <p class="ml-4 op">Total Price</p>
+            </div>
+          </div>
+          <div class="productBody flex">
+            <div class="left flex">
+              <div class="photoPart">
+                <img style="height: 80px;"
+                  src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/images%2Fa2fgjg1p227?alt=media&token=59532172-dbd8-4608-a74c-b26ade2937f5"
+                  alt="">
+              </div>
+              <div class="aboutPart mt-4">
+                <p>Nike Pro All Over Mesh Tank</p>
+                <p>Brand: <span>Nike</span></p>
+                <p>Size: <span>M</span></p>
+              </div>
+            </div>
+            <div class="rigth flex">
+              <p class="mr-5 mt-4">$69.00</p>
+              <div class="mr-5 mt-4">
+                <select name="" id="">
+                  <option value="" selected>1</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                  <option value="">5</option>
+                  <option value="">6</option>
+                  <option value="">7</option>
+                  <option value="">8</option>
+                  <option value="">9</option>
+                </select>
+              </div>
+              <p class="mt-4">$69.00</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="showProduct"></div>
-    </div>
-    <div class="rightPart">
+      <div class="rightPart">
+        <p class="orderSumHead">Order Summary: <span class="price">$180</span></p>
+        <div class="singUp" (click)="openCreateAccountPart()">
+          <p class="signUpText pos">Proceed to Checkout</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -15,15 +15,20 @@
 
 .loginPart {
   width: 50%;
-  height: 670px;
+  min-height: 670px;
   text-align: center;
 }
 
-.innerLogin,
-.innerCreate {
+.innerLogin{
   width: 400px;
   height: 400px;
   margin-top: 100px;
+  margin-left: 120px;
+}
+.innerCreate {
+  width: 400px;
+  min-height: 400px;
+  margin-top: 50px;
   margin-left: 120px;
 }
 
@@ -52,13 +57,20 @@
 }
 
 input {
-  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#id{
+margin-top: 0px;
+}
+#email{
+margin-top: 0px;
 }
 
 .myBtn {
   height: 50px;
   background-color: #ff5912;
-  border-radius: 25px;
+  border: none;
   color: #ffffff;
   font-family: "Harmonia Sans Pro Cyr";
   font-size: 22px;
@@ -69,9 +81,12 @@ input {
   margin-bottom: 50px;
   cursor: pointer;
 }
-
+.red{
+  color: red;
+}
 .newPos{
   width: 250px;
+  margin-top: 30px;
 }
 
 .text {
@@ -112,4 +127,22 @@ input {
 .singUp:hover {
   color: #ffffff;
   background-color: #ff5912;
+}
+
+.op{
+  opacity: 0;
+}
+.hello{
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 52px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 150px;
+  margin-bottom: 20px;
+}
+span{
+  font-family: "Harmonia Sans Pro Bold";
+  color: #3c4751;
+  font-weight: 550;
 }

@@ -6,21 +6,23 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BrandPipe implements PipeTransform {
 
-  transform(arr: Array<any>, brandFilter: string= ''): any {
-    // console.log(brandFilter);
-    
-    let newArr = [];
-
-    if(!arr){
-      return arr;
+  transform(products: Array<any>, searchBrand: Array<string>) {
+    const newP = [];
+    if (!products) {
+      return [];
     }
-    if(!brandFilter){
-      return arr;
+    if (!searchBrand || searchBrand.length === 0) {
+      return products;
     }
-    newArr = arr.filter(str => str.brand.toLowerCase() === brandFilter.toLowerCase());
-    // console.log(newArr);
-    arr = newArr;
-    return arr;
+    products.filter(product => {
+      searchBrand.map(search => {
+        if (product.brand.toLowerCase() === search.toLowerCase()) {
+          newP.push(product);
+        }
+      });
+    });
+    products = newP;
+    return products;
   }
 
 }

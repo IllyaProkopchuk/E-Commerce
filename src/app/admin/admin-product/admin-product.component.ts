@@ -121,8 +121,6 @@ export class AdminProductComponent implements OnInit {
   }
 
 
-
-
   public getBrandData() {
     this.brandService.getBrand().subscribe(
       myArray => {

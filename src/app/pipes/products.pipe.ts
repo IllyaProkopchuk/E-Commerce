@@ -1,19 +1,27 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'products'
+  name: 'products',
+  pure: false
 })
 export class ProductsPipe implements PipeTransform {
 
-  transform(arr: Array<any>, search: string= ''): any {
-    console.log(arr);
-
-    if(search === ''){
-      return arr;
+  transform(products: Array<any>, searchTerm: Array<string>) {
+    const newP = [];
+    if (!products) {
+      return [];
     }
-    let newArr = arr.filter(str => str.category.toLowerCase() === search.toLowerCase());
-    console.log(newArr);
-    return newArr;
+    if (!searchTerm || searchTerm.length === 0) {
+      return products;
+    }
+    products.filter(product => {
+      searchTerm.map(search => {
+        if (product.category.toLowerCase() === search.toLowerCase()) {
+          newP.push(product);
+        }
+      });
+    });
+    products = newP;
+    return products;
   }
-
 }

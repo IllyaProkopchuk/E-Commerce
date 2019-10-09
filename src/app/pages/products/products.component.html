@@ -4,7 +4,7 @@
       <div class="categoriesBlock">
         <p class="catTitle">Categories</p>
         <ul *ngFor="let cat of category">
-          <input type="checkbox" [id]="cat.name" name="rr" (click)="getValue(cat.name)" class="radiobut"><label
+          <input type="checkbox" [id]="cat.name" name="rr" (click)="typeClothes(cat.name)" class="radiobut"><label
             [for]="cat.name">{{cat.name}}</label>
         </ul>
       </div>
@@ -42,7 +42,7 @@
     <div class="productsPart">
       <div class="flex">
         <div class="productShow"
-          *ngFor="let prod of products| products:search | brand: brandFilter  | size: xs: s: m: l: xl | price: minValue: maxValue ; let i=index"
+          *ngFor="let prod of products| products: searchTerm | brand: searchBrand  | size: xs: s: m: l: xl | price: minValue: maxValue ; let i=index"
           [hidden]="i > loadIndex">
           <div class="notHover">
             <div><img [src]="prod.photo" alt="" class="imgBox"></div>
@@ -58,7 +58,7 @@
               <div class="myBtn" [routerLink]="[ '/products', prod.id ]">
                 <p class="innerText">More details</p>
               </div>
-              <div><img
+              <div style="cursor: pointer" (click)="addToBag(prod.id)"><img
                   src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/Add_To_Cart_Ico.png?alt=media&token=e603c3cb-9eaa-4eff-a924-e271d223704d"
                   alt="" style="margin-top: 2px;">
               </div>
