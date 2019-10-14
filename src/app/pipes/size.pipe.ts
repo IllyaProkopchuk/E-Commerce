@@ -36,7 +36,6 @@ export class SizePipe implements PipeTransform {
         }
       });
     });
-    // console.log('last chanse',this.getUnique(newP, 'id'));
     products = this.getUnique(newP, 'id');
     return products;
   }

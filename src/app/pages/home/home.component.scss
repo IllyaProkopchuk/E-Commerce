@@ -35,21 +35,24 @@
 }
 
 h1 {
-  width: 401px;
-  height: 37px;
+  // width: 401px;
+  // height: 37px;
   color: #ff5912;
   font-family: "Harmonia Sans Pro Cyr Bold";
-  font-size: 52px;
+  font-size: 102px;
   font-weight: 400;
-  text-transform: uppercase;
   margin-bottom: 29px;
+}
+
+.o {
+  color: #3c4751;
 }
 
 .textTop {
   height: 17px;
   color: #3c4751;
   font-family: "Harmonia Sans Pro Cyr";
-  font-size: 18px;
+  font-size: 58px;
   font-weight: 400;
   line-height: 29.97px;
 }
@@ -84,6 +87,11 @@ h1 {
 }
 
 .flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexSale {
   display: flex;
   flex-direction: row;
 }
@@ -135,21 +143,21 @@ h1 {
   color: #495662;
   height: 16px;
   margin: 0 auto;
-  width: 546px;
   margin-top: 30px;
   margin-bottom: 50px;
 }
 
 .showItem {
   width: 25%;
-  height: 365px;
+  height: 385px;
   background-color: #ffffff;
   padding: 20px;
   margin: 20px;
 }
 
 .itemImg {
-  height: 240px;
+  // height: 240px;
+  width: 100%;
   display: block;
   margin: 0 auto;
   margin-bottom: 32px;
@@ -184,6 +192,7 @@ h1 {
   height: 60px;
   background-color: #ffffff;
   padding: 20px;
+  cursor: pointer;
   margin-bottom: 120px;
 }
 
@@ -217,10 +226,12 @@ h1 {
   line-height: 29.99px;
 }
 
-
+.salesBlock {
+  width: 33%;
+}
 
 .salesItem {
-  width: 340px;
+  width: 100%;
   height: 160px;
   background-color: #ffffff;
   padding: 10px;
@@ -228,11 +239,12 @@ h1 {
   justify-content: space-between;
   margin-top: 20px;
 }
-.salesItemTitle{
+
+.salesItemTitle {
   margin-top: 35px;
 }
+
 .salesItemImage {
-  height: 150px;
   width: 120px;
 }
 
@@ -256,9 +268,206 @@ h1 {
   margin-left: 26px;
 }
 
-.salesPos{
+.salesPos {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
   margin-top: 50px;
 }
+
+
+.showItem:hover {
+  .notHover {
+    display: none;
+  }
+
+  .whenHover {
+    display: block;
+  }
+}
+
+.myBtn {
+  width: 130px;
+  height: 30px;
+  border: 1px solid #ff5912;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-right: 4px;
+}
+
+.myBtn:hover {
+  background-color: #ff5912;
+  color: #ffffff;
+}
+
+.innerBtnText {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.sizeHover {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.phBox {
+  width: 140px;
+  margin: 0 auto;
+}
+
+.productHoverName {
+  height: 13px;
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 31px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50px;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.whenHover {
+  display: none;
+}
+
+span {
+  margin-right: 5px;
+}
+
+.imgHoverBox {
+  width: 100%;
+  // height: 87px;
+  margin-top: 35px;
+  margin-bottom: 31px;
+}
+
+@media screen and (max-width: 1201px) {
+  .showItem {
+    width: 25%;
+    height: 345px;
+  }
+
+  .imgHoverBox {
+    margin-top: 1px;
+  }
+}
+
+@media screen and (max-width: 994px) {
+  .flexSale {
+    display: block;
+  }
+
+  .salesItem {
+    height: 260px;
+  }
+
+  .salesBlock {
+    width: 25%;
+  }
+
+  .salesItemImage {
+    width: 100%;
+  }
+
+  .salesItemDescription {
+    text-align: center;
+    width: 100%;
+  }
+
+  .salesItemPrice {
+    text-align: center;
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .salesItemTitle {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 993px) {
+  .itemPrice {
+    margin-top: 45px
+  }
+  .showItem{
+    height: 310px;
+  }
+  .phBox{
+    width: 80%;
+  }
+  .textTop{
+    font-size: 50px;
+  }
+  .banner{
+    height: 440px;
+  }
+  .innerText{
+    top: 16%;
+    left: 13%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .textTop{
+    font-size: 35px;
+  }
+  .flex{
+    flex-direction: column;
+  }
+  .showItem{
+    width: 50%;
+    margin: 0 auto;
+    height: 500px;
+    margin-bottom: 20px;
+  }
+  .salesPos{
+    flex-direction: column;
+  }
+  .salesBlock{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .salesItem{
+    height: 465px;
+  }
+  .loadMore{
+    display: none;
+  }
+}
+@media screen and (max-width: 770px){
+  .showItem{
+    height: 430px;
+    width: 270px;
+  }
+  .salesBlock{
+    height: 390px;
+    width: 275px;
+    margin-bottom: 20px;
+  }
+  .salesItem{
+    height: 390px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  h1{
+    font-size: 80px;
+    font-weight: 400;
+    margin-bottom: 13px;
+  }
+  .textTop{
+    font-size:30px;
+  }
+}
+

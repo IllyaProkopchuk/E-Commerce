@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of adminFeedback; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{cat.name}}</td>
+        <td>{{cat.email}}</td>
+        <td>{{cat.comment}}</td>
+      </tr>
+    </tbody>
+  </table>

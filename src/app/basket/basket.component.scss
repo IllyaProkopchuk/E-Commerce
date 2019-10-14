@@ -14,7 +14,7 @@
 }
 
 .showProduct {
-  width: 100%;
+  width: 600px;
   height: 138px;
   padding-bottom: 30px;
   margin-top: 30px;
@@ -34,6 +34,11 @@
 }
 
 .flex {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.flexB {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -109,4 +114,25 @@ span {
 
 .pos {
   left: 15px;
+}
+
+@media screen and (max-width: 1050px){
+  .flexB{
+    flex-direction: column;
+  }
+  .leftPart{
+    width: 100%;
+  }
+  .showProduct{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px){
+  .showProduct{
+    height: 150px;
+    font-size: 10px;
+  }
+  p{
+    font-size: 10px;
+  }
 }

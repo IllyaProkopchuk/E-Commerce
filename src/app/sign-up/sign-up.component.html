@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="flex">
+    <div class="loginPart">
+      <div class="displayTable">
+        <div class="displayTableCell">
+          <div class="authBlock">
+            <h3 class="createText">Create an account</h3>
+            <form #form="ngForm" (submit)="onSubmit(form)">
+              <div class="formGroup">
+                <input type="email" placeholder="Email Address" id="email" class="form-control"
+                  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Email"
+                  name="email" #userEmail required [(ngModel)]="usersForm.email" name="email">
+                <!-- <div *ngIf="qqq.invalid && qqq.touched" class="red">Write you`r email</div> -->
+                <!-- <div [hidden]="emailUse" class="red">This email has been already used</div> -->
+              </div>
+
+              <div class="formGroup">
+                <input type="password" class="form-control" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default" placeholder="Password" name="password" #userPwd required
+                  [(ngModel)]="usersForm.password" name="password">
+              </div>
+
+              <div class="formGroup">
+                <input class="myBtn newPos" value="Sign Up" type="submit" [disabled]="form.invalid">
+              </div>
+            </form>
+            <div class="redirectToLogin" routerLink="/login" style="cursor: pointer;">
+              <span>Already have an account? <span class="redirect">Log In</span></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="photoPart">
+      <img [src]="photo" alt="" class="photo">
+    </div>
+  </div>
+</div>
+<!-- <div class="innerCreate" [hidden]="checkerCreate">
+    <p class="createText">Create Account</p>
+    <div>
+      <form #form="ngForm" (submit)="onSubmit(form)">
+        <input type="text" name="id" id="id" #id="ngModel" [(ngModel)]="usersForm.id" class="op">
+        <input type="checkbox" class="op" name="login" id="login" [(ngModel)]="usersForm.login">
+        <input type="email" id="email" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Email" [(ngModel)]="usersForm.email"
+          name="email" #qqq="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="qqq.invalid && qqq.touched" class="red">Write you`r email</div>
+        <div [hidden]="emailUse" class="red">This email has been already used</div>
+
+        <input type="password" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Password" [(ngModel)]="usersForm.password"
+          name="password" #www="ngModel" required id="password">
+        <div *ngIf="www.invalid && www.touched" class="red">Create a password</div>
+
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="First Name" [(ngModel)]="usersForm.firstName"
+          name="firstName" #eee="ngModel" required id="firstName">
+        <div *ngIf="eee.invalid && eee.touched" class="red">Write first name</div>
+
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Second Name" [(ngModel)]="usersForm.secondName"
+          name="secondName" #rrr="ngModel" required id="secondName">
+        <div *ngIf="rrr.invalid && rrr.touched" class="red">Write second name</div>
+
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Age" [(ngModel)]="usersForm.age" name="age"
+          #ttt="ngModel" required id="age">
+        <div *ngIf="ttt.invalid && ttt.touched" class="red">Enter you`r age</div>
+
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Country" [(ngModel)]="usersForm.country"
+          name="country" #aaa="ngModel" required id="country">
+        <div *ngIf="aaa.invalid && aaa.touched" class="red">Write country name</div>
+
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="City" [(ngModel)]="usersForm.city" name="city"
+          #sss="ngModel" required id="city">
+        <div *ngIf="sss.invalid && sss.touched" class="red">Write city name</div>
+
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Street" [(ngModel)]="usersForm.street"
+          name="street" #ddd="ngModel" required id="street">
+        <div *ngIf="ddd.invalid && ddd.touched" class="red">Write the street name</div>
+
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Building number"
+          [(ngModel)]="usersForm.buildingNumber" name="buildingNumber" #fff="ngModel" required id="buildingNumber">
+        <div *ngIf="fff.invalid && fff.touched" class="red">Write you`r building number</div>
+
+        <input type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Phone number" [(ngModel)]="usersForm.phone"
+          name="phone" #zzz="ngModel" required id="phone">
+        <div *ngIf="zzz.invalid && zzz.touched" class="red">Write you`r phone number</div>
+        <button class="myBtn newPos" type="submit" [disabled]="form.invalid">Create Account</button>
+        <div class="singUp" (click)="openCreateAccountPart()">
+          <p class="signUpText pos">Sign In</p>
+        </div>
+      </form>
+    </div>
+  </div> -->

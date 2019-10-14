@@ -138,3 +138,43 @@ li:hover {
 .pMathPhoto {
   margin-top: 20px;
 }
+
+@media screen and (max-width: 1201px) {
+  .innerLi {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 994px) {
+
+  .blackPart {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .inner{
+    flex-direction: column;
+  }
+  .innerLogo{
+    width: 150px;
+    margin: 0 auto;
+  }
+  .innerPayment{
+    width: 175px;
+    margin: 0 auto;
+  }
+  .pMethods{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .orangePart{
+    display: none;
+  }
+  .botPart{
+    padding: 0;
+    padding-top: 30px;
+  }
+}

@@ -1,0 +1,21 @@
+        <div class="row" *ngIf="authService.userData as user">
+          <div class="col-md-10">
+            <div class="media">
+              <div class="media-body">
+                <h1 class="hello">Hello: <strong
+                    class="hello">{{(user.displayName) ? user.displayName : 'User'}}</strong>
+                </h1>
+                <p>User ID: <strong>{{user.uid}}</strong></p>
+                <p>Email: <strong>{{user.email}}</strong></p>
+                <div class="flex">
+                <p>First Name: <strong>{{(user.displayName) ? user.displayName: 'User Name'}}</strong></p>
+                <input type="text" [hidden]="hideDisplayNameCheck" class="height" [(ngModel)]="fName" name="fName">
+                <div class="myBtn height"  [hidden]="hideDisplayNameCheck" (click)="saveDisplayName()">Save</div>
+                <span class="editUserName" (click)="editUserName()">edit</span></div>
+                <p>Second Name: <strong>{{(user.secondName) ? user.secondName: 'Second Name'}}</strong></p>
+                <p>Email Verified: <input type="checkbox" [checked]="user.emailVerified" disabled></p>
+                <button class="myBtn newPos" (click)="authService.SignOut()">Log Out</button>
+              </div>
+            </div>
+          </div>
+        </div>

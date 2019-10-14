@@ -39,6 +39,16 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import { ngxUiLoaderConfig } from './preloader-config';
+import { UsersService } from './shared/services/users.service';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './dashboard/profile/profile.component';
+import { AddressComponent } from './dashboard/address/address.component';
+import { OrderHistoryComponent } from './dashboard/order-history/order-history.component';
+import { AdminFeedbackComponent } from './admin/admin-feedback/admin-feedback.component';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +70,14 @@ import { ngxUiLoaderConfig } from './preloader-config';
     PricePipe,
     SizePipe,
     ProductDetailsComponent,
-
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
+    DashboardComponent,
+    ProfileComponent,
+    AddressComponent,
+    OrderHistoryComponent,
+    AdminFeedbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +98,7 @@ import { ngxUiLoaderConfig } from './preloader-config';
     NgxUiLoaderRouterModule,
   ],
 
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

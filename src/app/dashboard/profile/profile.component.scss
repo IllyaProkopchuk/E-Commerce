@@ -1,0 +1,68 @@
+.userProfile {
+  height: 45px;
+  color: #3c4751;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.hello {
+  color: #ff5912;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 52px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.myBtn {
+  height: 50px;
+  background-color: #ff5912;
+  border: none;
+  color: #ffffff;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 22px;
+  font-weight: 400;
+  width: 200px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.newPos {
+  width: 250px;
+  margin-top: 30px;
+}
+
+p{
+  margin-bottom: 10px;
+}
+strong{
+  font-weight: bold;
+}
+.editUserName{
+  color: blue;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+}
+.height{
+  height: 20px;
+  width: 100px;
+}
+.myBtn{
+  border: none;
+  background-color: #ff5912;
+  margin: 0;
+  margin-left: 5px;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 3px;
+}

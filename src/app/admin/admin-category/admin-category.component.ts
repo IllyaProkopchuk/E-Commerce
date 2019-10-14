@@ -23,10 +23,11 @@ export class AdminCategoryComponent implements OnInit {
 
   constructor(private categoryService: CategoryService,
     private fireStore: AngularFirestore) {
+      this.getCatData();
+
   }
 
   ngOnInit() {
-    this.getCatData();
   }
 
   private getCatData() {
@@ -79,55 +80,5 @@ export class AdminCategoryComponent implements OnInit {
   public editCategory(cat: ICategory): void {
     this.categoryForm = cat;
   }
-
-  // private getCatData(): void {
-  //   this.categoryService.getCategory().subscribe(
-  //     data => {
-  //       this.adminCategory = data;
-  //     },
-  //     err => {
-  //       console.log(err);
-
-  //     }
-  //   )
-  // }
-
-  // public addCategory(): void {
-  //   const newCat = new Category(1, this.catName);
-  //   if (this.adminCategory.length > 0) {
-  //     newCat.id = this.adminCategory.slice(-1)[0].id + 1;
-  //   }
-  //   this.categoryService.addCategory(newCat).subscribe(
-  //     () => {
-  //       this.getCatData();
-  //     }
-  //   );
-  //   this.catName = '';
-  // }
-
-  // public deleteCategory(obj: ICategory): void {
-  //   this.categoryService.deleteCategory(obj.id).subscribe(
-  //     () => {
-  //       this.getCatData();
-  //     }
-  //   );
-  // }
-
-  // public editCategory(obj: ICategory): void {
-  //   this.catName = obj.name;
-  //   this.editId = obj.id;
-  //   this.editStatus = true;
-  // }
-
-  // public saveEditCategory(): void {
-  //   const editCat = new Category(this.editId, this.catName);
-  //   this.categoryService.editCategory(editCat).subscribe(
-  //     () => {
-  //       this.getCatData();
-  //     }
-  //   )
-  //   this.editStatus = false;
-  //   this.catName = '';
-  // }
 
 }

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container hideWhen">
   <div class="smallHeader between">
     <div class="leftPart flex">
       <div class="mail flex">
@@ -35,17 +35,16 @@
   <div class="bigHeader">
     <div class="menu">
       <div class="menuLeft flex">
-        <div>
+        <div class="mainLogo">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/Logotype.png?alt=media&token=670105af-fb7d-498c-80c9-fca566ebf304"
-            alt="" class="logotype"  routerLink="home">
+            alt="" class="logotype" routerLink="home">
         </div>
         <nav class="nav mynav">
           <a class="nav-link" href="#" routerLink="home" routerLinkActive="activeNow">Home</a>
           <a class="nav-link" href="#" routerLink="products" routerLinkActive="activeNow">Products</a>
           <a class="nav-link" href="#" routerLink="about" routerLinkActive="activeNow">About</a>
           <a class="nav-link" href="#" routerLink="contact" routerLinkActive="activeNow">Contact</a>
-          <a class="nav-link" href="#" routerLink="admin" routerLinkActive="activeNow">Admin</a>
         </nav>
       </div>
       <div class="menuRight">
@@ -61,6 +60,51 @@
         </a>
       </div>
     </div>
+    <div class="dropdown center">
+      <button class="btn dropdown-toggle color"  type="button" id="dropdownMenu2" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu width" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button" routerLink="home" routerLinkActive="activeNow">Home</button>
+        <button class="dropdown-item" type="button" routerLink="products" routerLinkActive="activeNow">Products</button>
+        <button class="dropdown-item" type="button" routerLink="about" routerLinkActive="activeNow">About</button>
+        <button class="dropdown-item" type="button" routerLink="contact" routerLinkActive="activeNow">Contact</button>
+        <button class="dropdown-item" type="button" routerLink="login" routerLinkActive="activeNow">Login</button>
+        <button class="dropdown-item" type="button" routerLink="basket" routerLinkActive="activeNow">Shoping Bag</button>
+      </div>
+    </div>
   </div>
 </div>
 <hr>
+<!-- <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="home">La-piec</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="discount">Discount</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="pizza">Pizza</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="salad">Salad</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="drinks">Drinks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="admin">Admin</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header> -->

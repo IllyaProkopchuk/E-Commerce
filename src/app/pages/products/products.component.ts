@@ -46,6 +46,17 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
   }
 
+  public openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  public closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
+
   public showMore(): void {
     if (this.loadIndex < this.products.length) {
       this.loadIndex += 3;
@@ -64,9 +75,8 @@ export class ProductsComponent implements OnInit {
     } else {
       this.searchSize.splice(this.searchSize.indexOf(type), 1);
     }
-    console.log(this.searchSize);    
   }
-  
+
   public typeClothes(type: string): void {
     if (this.searchTerm.indexOf(type) === -1) {
       this.searchTerm.push(type);
@@ -114,7 +124,6 @@ export class ProductsComponent implements OnInit {
   public getProdData() {
     this.productsService.getProducts().subscribe(
       myArray => {
-        console.log('myArr', myArray);
         this.products = myArray.map(item => {
           return {
             id: item.payload.doc.id,

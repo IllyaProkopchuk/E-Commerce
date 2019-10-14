@@ -9,18 +9,18 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  products: Array<any>;
+  products: Array<IProducts>;
   last: Array<any>;
-  // value: number = -3;
+  value: number = -3;
+  load: number = 2;
+  checker: boolean = false;
 
   constructor(private productsServices: ProductsService,
     private fireStore: AngularFirestore) {
-      this.getProdData();
-    console.log('arr', this.products);
-    // this.getLastProducts();
+    this.getProdData();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   public getProdData() {
     this.productsServices.getProducts().subscribe(
@@ -30,19 +30,20 @@ export class HomeComponent implements OnInit {
           return {
             id: item.payload.doc.id,
             ...item.payload.doc.data()
-          } as any;
-        });
+          } as IProducts;
+        }).slice(this.value);
       }
     );
+}
+
+  public loadMore() {
+    this.value -= 3;
+    this.getProdData() 
+    if (this.load < -6) {
+      this.checker = false;
+    }
+    else {
+      this.checker = true;
+    }
   }
-
-
-  // public getLastProducts() {
-  //   if (!this.last) return [];
-  //   else {
-  //     this.last = this.products.slice(this.value);
-  //     console.log(this.last);
-  //   }
-  // }
-
 }

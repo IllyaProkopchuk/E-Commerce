@@ -5,18 +5,20 @@
       alt="">
   </div>
   <div class="contactPart">
+    <form #form="ngForm" (submit)="onSubmit(form)">
     <p class="getIn">Get In Touch</p>
     <div class="flex">
       <div class="left">
         <input type="text" class="form-control" aria-label="Sizing example input"
-          aria-describedby="inputGroup-sizing-default" placeholder="Name">
-        <input type="text" class="form-control" aria-label="Sizing example input"
-          aria-describedby="inputGroup-sizing-default" placeholder="Email">
+          aria-describedby="inputGroup-sizing-default" placeholder="Name" [(ngModel)]="feedForm.name" name="name" id="name" required>
+        <input type="email" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" placeholder="Email" [(ngModel)]="feedForm.email" name="email" id="email" required>
       </div>
       <div class="right">
-          <textarea id="" cols="40" rows="6" placeholder="Comment here!"></textarea>
+          <textarea class="tarea" id="" rows="6" placeholder="Comment here!" [(ngModel)]="feedForm.comment" id="comment" name="comment" required></textarea>
       </div>
     </div>
-    <div class="sendButton"><p class="innerText">Send</p></div>
+    <button class="sendButton" type="submit"><p class="innerText">Send</p></button>
+  </form>
   </div>
 </div>

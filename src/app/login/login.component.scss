@@ -15,16 +15,18 @@
 
 .loginPart {
   width: 50%;
-  min-height: 670px;
+  min-height: 470px;
   text-align: center;
+  margin-right: 20px;
 }
 
-.innerLogin{
+.innerLogin {
   width: 400px;
   height: 400px;
   margin-top: 100px;
   margin-left: 120px;
 }
+
 .innerCreate {
   width: 400px;
   min-height: 400px;
@@ -60,11 +62,12 @@ input {
   margin-top: 30px;
 }
 
-#id{
-margin-top: 0px;
+#id {
+  margin-top: 0px;
 }
-#email{
-margin-top: 0px;
+
+#email {
+  margin-top: 0px;
 }
 
 .myBtn {
@@ -81,10 +84,12 @@ margin-top: 0px;
   margin-bottom: 50px;
   cursor: pointer;
 }
-.red{
+
+.red {
   color: red;
 }
-.newPos{
+
+.newPos {
   width: 250px;
   margin-top: 30px;
 }
@@ -98,7 +103,8 @@ margin-top: 0px;
   top: 13px;
   left: 50px;
 }
-.po{
+
+.po {
   width: 160px;
 }
 
@@ -129,10 +135,11 @@ margin-top: 0px;
   background-color: #ff5912;
 }
 
-.op{
+.op {
   opacity: 0;
 }
-.hello{
+
+.hello {
   color: #ff5912;
   font-family: "Harmonia Sans Pro Cyr Bold";
   font-size: 52px;
@@ -141,8 +148,18 @@ margin-top: 0px;
   margin-top: 150px;
   margin-bottom: 20px;
 }
-span{
+
+span {
   font-family: "Harmonia Sans Pro Bold";
   color: #3c4751;
   font-weight: 550;
+}
+
+@media screen and(max-width: 610px) {
+  .photoPart{
+    display: none;
+  }
+  .loginPart{
+    width: 100%;
+  }
 }

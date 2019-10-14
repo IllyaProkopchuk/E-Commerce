@@ -1,4 +1,4 @@
-<div class="body">
+<!-- <div class="body">
   <div class="flex">
     <div class="loginPart">
       <div class="innerLogin" [hidden]="checkerLogin">
@@ -92,6 +92,48 @@
       <img
         [src]="photo"
         alt="" class="photo">
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="flex">
+    <div class="loginPart">
+      <div class="displayTable">
+        <div class="displayTableCell">
+
+          <div class="authBlock">
+            <h3 class="singIn">Sign In</h3>
+            <div class="formGroup">
+              <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" placeholder="Username" #userName required>
+            </div>
+
+            <div class="formGroup">
+              <input type="password" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" placeholder="Password" #userPassword required>
+            </div>
+
+            <!-- Calling SignIn Api from AuthService -->
+            <div class="formGroup">
+              <input type="button" class="myBtn mt-4" value="Log in"
+                (click)="authService.SignIn(userName.value, userPassword.value)">
+            </div>
+
+            <div class="forgotPassword" routerLink="/forgot-password" style="cursor: pointer;">
+              <span>Forgot Password?</span> 
+            </div>
+          </div>
+
+          <div class="redirectToLogin" routerLink="/sign-up" style="cursor: pointer;">
+            <span>Don't have an account?<span class="redirect"> Sign Up</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="photoPart">
+      <img [src]="photo" alt="" class="photo">
     </div>
   </div>
 </div>
