@@ -7,6 +7,7 @@ import { BrandService } from 'src/app/shared/services/brand.service';
 import { IBrand } from 'src/app/shared/interfaces/brand.interface';
 import { IProducts } from 'src/app/shared/interfaces/products.interface';
 import { ProductsService } from 'src/app/shared/services/products.service';
+import { UsersService } from 'src/app/shared/services/users.service';
 
 
 
@@ -26,6 +27,7 @@ export class ProductsComponent implements OnInit {
   searchTerm: Array<string> = [];
   searchBrand: Array<string> = [];
   searchSize: Array<string> = [];
+  user: any = [];
 
   category: Array<ICategory>;
   brand: Array<IBrand>;
@@ -34,16 +36,100 @@ export class ProductsComponent implements OnInit {
   loadIndex: number = 8;
   hideShowMore: boolean = true;
 
+  productId: string;
+  id: string;
+
+  selectSizeShow: boolean = true;
+
+  xsCheck: boolean = false;
+  sCheck: boolean = false;
+  mCheck: boolean = false;
+  lCheck: boolean = false;
+  xlCheck: boolean = false;
+
+  saveSize: string;
+
   constructor(private categoryService: CategoryService,
     private brandService: BrandService,
     private productsService: ProductsService,
+    public authService: UsersService,
     private fireStore: AngularFirestore) {
     this.getCatData();
     this.getBrandData();
     this.getProdData();
+    this.getUser();
   }
 
   ngOnInit() {
+  }
+
+  public sizeSelect(size): void {
+    this.xsCheck = false;
+    this.sCheck = false;
+    this.mCheck = false;
+    this.lCheck = false;
+    this.xlCheck = false;
+    if (size === 'xs') {
+      console.log(size);
+      this.xsCheck = true;
+    }
+    if (size === 's') {
+      console.log(size);
+      this.sCheck = true;
+    }
+    if (size === 'm') {
+      console.log(size);
+      this.mCheck = true;
+    }
+    if (size === 'l') {
+      console.log(size);
+      this.lCheck = true;
+    }
+    if (size === 'xl') {
+      console.log(size);
+      this.xlCheck = true;
+    }
+    this.saveSize = size;
+    console.log('saveSize', size);
+  }
+
+  public addToBag(id) {
+    if (this.xlCheck == false || this.lCheck == false || this.mCheck == false || this.sCheck == false || this.xsCheck == false) {
+      this.selectSizeShow = false;
+    }
+    if (this.xlCheck == true || this.lCheck == true || this.mCheck == true || this.sCheck == true || this.xsCheck == true) {
+      this.selectSizeShow = true;
+      this.productId = id;
+      let bagArray: any = [];
+      if (this.user.bag) {
+        this.user.bag.map(arr => bagArray.push(arr));
+      }
+      let obj = Object.assign({}, {size: this.saveSize}, {productId: this.productId});
+      bagArray.push(obj);
+      this.push(bagArray);
+      console.log(bagArray);
+      this.xsCheck = false;
+      this.sCheck = false;
+      this.mCheck = false;
+      this.lCheck = false;
+      this.xlCheck = false;
+    }
+  }
+  private push(arr) {
+    this.fireStore.collection('users').doc(this.id).update({
+      bag: arr
+    }).then(function () {
+      console.log("Document successfully updated!");
+    })
+  }
+  public getUser() {
+    const userLocal = JSON.parse(localStorage.getItem('user'));
+    this.id = userLocal.uid;
+    this.authService.getOneUser(this.id).subscribe(
+      data => {
+        this.user = data.payload.data();
+      }
+    );
   }
 
   public openNav() {

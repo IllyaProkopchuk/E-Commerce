@@ -7,22 +7,28 @@
       <p class="name">{{view?.name}}</p>
       <p class="title">{{view?.description}}</p>
       <hr>
-      <p class="choose">Choose Size: <span *ngIf="view.xs">XS</span><span *ngIf="view.s">S</span><span
-          *ngIf="view.m">M</span><span *ngIf="view.l">L</span><span *ngIf="view.xl">XL</span></p>
+      <p class="choose">Choose Size:
+        <span *ngIf="view.xs" (click)="sizeSelect('xs')" [ngClass]="{'pickedSize': xsCheck}">XS</span>
+        <span *ngIf="view.s" (click)="sizeSelect('s')" [ngClass]="{'pickedSize': sCheck}">S</span>
+        <span *ngIf="view.m" (click)="sizeSelect('m')" [ngClass]="{'pickedSize': mCheck}">M</span>
+        <span *ngIf="view.l" (click)="sizeSelect('l')" [ngClass]="{'pickedSize': lCheck}">L</span>
+        <span *ngIf="view.xl" (click)="sizeSelect('xl')" [ngClass]="{'pickedSize': xlCheck}">XL</span>
+      </p>
+      <p class="sizeWarning" [hidden]="selectSizeShow">Select size</p>
       <hr>
       <div class="flex">
         <p class="price">Price : {{view?.price}}$</p>
         <div class="flex">
-          <img class="imgIcon"
+          <img class="imgIcon" (click)="addToBag()"
             src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/Add_To_Cart_Icon.png?alt=media&token=79ea14a9-cc54-4ba5-8d57-129a35922dc8"
             alt="">
-          <div class="myBtn">
+          <div class="myBtn" (click)="orderNow()">
             <p class="innerText">Order Now</p>
           </div>
         </div>
       </div>
     </div>
-    <div (click)="goBack()" ><img class="back"
+    <div (click)="goBack()"><img class="back"
         src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/back.png?alt=media&token=dd1be4cf-0ed6-4493-9ce6-710f1e8c4e9e"
         alt=""></div>
   </div>

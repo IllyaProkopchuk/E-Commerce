@@ -97,16 +97,21 @@
           <div class="whenHover">
             <div class="phBox"><img [src]="prod.photo" alt="" class="imgHoverBox"></div>
             <p class="productHoverName">{{prod.name}}</p>
-            <p class="sizeHover">Sizes: <span *ngIf="prod.xs">xs</span><span *ngIf="prod.s">s</span>
-              <span *ngIf="prod.m">m</span><span *ngIf="prod.l">l</span><span *ngIf="prod.xl">xl</span></p>
+            <p class="sizeHover">Sizes:
+              <span (click)="sizeSelect('xs')" [ngClass]="{'pickedSize': xsCheck}" *ngIf="prod.xs">xs</span><span
+                (click)="sizeSelect('s')" [ngClass]="{'pickedSize': sCheck}" *ngIf="prod.s">s</span>
+              <span *ngIf="prod.m" [ngClass]="{'pickedSize': mCheck}" (click)="sizeSelect('m')">m</span><span
+                *ngIf="prod.l" [ngClass]="{'pickedSize': lCheck}" (click)="sizeSelect('l')">l</span><span
+                (click)="sizeSelect('xl')" [ngClass]="{'pickedSize': xlCheck}" *ngIf="prod.xl">xl</span></p>
+            <p class="sizeWarning" [hidden]="selectSizeShow">Select size</p>
             <div class="rows">
               <div class="myBtn" [routerLink]="[ '/products', prod.id ]">
                 <p class="innerText">More details</p>
               </div>
-              <div style="cursor: pointer" (click)="addToBag(prod.id)"><img
+              <button style="cursor: pointer" class="addBtn" (click)="addToBag(prod.id)"><img
                   src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/Add_To_Cart_Ico.png?alt=media&token=e603c3cb-9eaa-4eff-a924-e271d223704d"
                   alt="" style="margin-top: 2px;">
-              </div>
+              </button>
             </div>
           </div>
         </div>

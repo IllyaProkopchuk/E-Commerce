@@ -246,7 +246,17 @@ span {
 
 .sizeHover {
   text-align: center;
-  margin-bottom: 30px;
+  cursor: pointer;
+}
+.pickedSize{
+  color: #ff5912;
+  font-size: 20px;
+}
+
+.sizeWarning {
+  text-align: center;
+  color: red;
+  font-family: "Harmonia Sans Pro Cyr";
 }
 
 .whenHover {
@@ -273,6 +283,7 @@ span {
   font-weight: 700;
   margin: 0 auto;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .myBtn:hover {
@@ -292,6 +303,13 @@ span {
   height: 50px;
   width: 150px;
   margin: 0 auto;
+  margin-top: 30px;
+}
+
+.addBtn {
+  border: none;
+  background-color: inherit;
+  margin-bottom: 22px;
 }
 
 //--------------------sidebar
@@ -414,7 +432,8 @@ span {
     width: 200px;
     height: 325px;
   }
-  .imgHoverBox{
+
+  .imgHoverBox {
     margin-top: 1px;
   }
 

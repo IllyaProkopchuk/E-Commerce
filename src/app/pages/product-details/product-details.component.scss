@@ -55,7 +55,11 @@ span {
 span:hover {
   color: #ff5912;
   font-size: 20px;
+}
 
+.pickedSize {
+  color: #ff5912;
+  font-size: 20px;
 }
 
 .choose {
@@ -113,10 +117,17 @@ span:hover {
   top: 15px;
   left: 23px;
 }
-.back{
-    cursor: pointer;
-    height: 60px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+
+.back {
+  cursor: pointer;
+  height: 60px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.sizeWarning {
+  text-align: center;
+  color: red;
+  font-family: "Harmonia Sans Pro Cyr";
 }

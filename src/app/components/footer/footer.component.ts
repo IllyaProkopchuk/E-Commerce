@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  userEmail: string;
+  constructor(private fireStore: AngularFirestore,
+  ) { }
 
   ngOnInit() {
   }
 
+  public joinUs() {
+    if (this.userEmail) {
+      this.fireStore.collection('emails').add({ email: this.userEmail });
+      this.userEmail = '';
+    }
+  }
 }

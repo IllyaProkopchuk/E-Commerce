@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { IUsers } from '../interfaces/users.interface';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,11 @@ export class UsersService {
       }
     })
   }
-  // Sign in with email/password
+
+  public getOneUser(id: string) {
+    return this.afs.collection(`users`).doc(id).snapshotChanges();
+  }
+
   SignIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
@@ -36,7 +41,7 @@ export class UsersService {
         });
         this.SetUserData(result.user);
       }).catch((error) => {
-        // window.alert(error.message)
+        window.alert(error.message)
       })
   }
 
@@ -52,23 +57,20 @@ export class UsersService {
       })
   }
 
-  SendVerificationMail() {
-    return this.afAuth.auth.currentUser.sendEmailVerification()
-      .then(() => {
-        this.router.navigate(['verify-email-address']);
-      })
+  GoogleAuth() {
+    return this.AuthLogin(new auth.GoogleAuthProvider());
   }
-  ForgotPassword(passwordResetEmail) {
-    return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
+
+  AuthLogin(provider) {
+    return this.afAuth.auth.signInWithPopup(provider)
+      .then((result) => {
+        this.ngZone.run(() => {
+          this.router.navigate(['dashboard/address']);
+        })
+        this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error)
       })
-  }
-  get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
   SetUserData(user) {
@@ -76,7 +78,6 @@ export class UsersService {
     const userData: any = {
       uid: user.uid,
       email: user.email,
-      name: user.firstName,
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified
@@ -85,13 +86,40 @@ export class UsersService {
       merge: true
     })
   }
+
+  // Sign out 
   SignOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['login']);
     })
   }
 
+
+    // Send email verfificaiton when new user sign up
+    SendVerificationMail() {
+      return this.afAuth.auth.currentUser.sendEmailVerification()
+      .then(() => {
+        this.router.navigate(['verify-email-address']);
+      })
+    }
+  
+    // Reset Forggot password
+    ForgotPassword(passwordResetEmail) {
+      return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
+      .then(() => {
+        window.alert('Password reset email sent, check your inbox.');
+      }).catch((error) => {
+        window.alert(error)
+      })
+    }
+    
+    get isLoggedIn(): boolean {
+      const user = JSON.parse(localStorage.getItem('user'));
+      return (user !== null && user.emailVerified !== false) ? true : false;
+    }
+  
+  
 }
 
 

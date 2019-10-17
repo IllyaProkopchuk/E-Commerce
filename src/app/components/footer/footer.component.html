@@ -10,9 +10,11 @@
           <img
             src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/Mail_icon.png?alt=media&token=40a527a5-da72-4321-8d8c-d2192cf8e4dc"
             alt="" class="myimg">
-          <div class="centerPartText">type your email here</div>
+          <!-- <div class="centerPartText">type your email here</div> -->
+          <input type="text" class="centerPartText" placeholder="type you`r email here" [(ngModel)]="userEmail" required
+            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
         </div>
-        <div class="rightPartLetter">join us</div>
+        <div class="rightPartLetter" (click)="joinUs()">join us</div>
       </div>
     </div>
   </div>
@@ -36,7 +38,7 @@
         </ul>
       </div>
       <div class="innerPayment">
-          <div class="pMethods">Payment Methods</div>
+        <div class="pMethods">Payment Methods</div>
         <img
           src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/Payment_Images.png?alt=media&token=79db4bdc-3d00-4afc-b68e-c22798fe16c2"
           alt="" class="pMathPhoto">

@@ -1,1 +1,37 @@
-<p>address works!</p>
+<div class="row mb-4">
+  <!-- <div class="row" *ngIf="authService.userData as user"> -->
+  <div class="col-md-10">
+    <div class="media">
+      <div class="media-body">
+        <h2 class="hello">EDIT YOU`R ADDRESS
+        </h2>
+        <div class="flex">
+          <p>Country: <strong>{{(user.country) ? user.country: 'USA'}}</strong></p>
+          <input type="text" [hidden]="countryCheck" class="height" [(ngModel)]="country" name="country">
+          <div class="myBtn height" [hidden]="countryCheck" (click)="saveCountry()">Save</div>
+          <span class="editUserName" (click)="editCountry()">edit</span>
+        </div>
+        <div class="flex">
+          <p>City: <strong>{{(user.city) ? user.city: 'Ivano-Frankivsk'}}</strong></p>
+          <input type="text" [hidden]="cityCheck" class="height" [(ngModel)]="city" name="city">
+          <div class="myBtn height" [hidden]="cityCheck" (click)="saveCity()">Save</div>
+          <span class="editUserName" (click)="editCity()">edit</span>
+        </div>
+        <div class="flex">
+          <p>Street: <strong>{{(user.street) ? user.street: 'Franka'}}</strong></p>
+          <input type="text" [hidden]="cityCheck" class="height" [(ngModel)]="street" name="street">
+          <div class="myBtn height" [hidden]="streetCheck" (click)="saveStreet()">Save</div>
+          <span class="editUserName" (click)="editStreet()">edit</span>
+        </div>
+        <div class="flex">
+          <p>Building Number: <strong>{{(user.buildingNumber) ? user.buildingNumber: '13'}}</strong></p>
+          <input type="text" [hidden]="numberCheck" class="height" [(ngModel)]="number" name="number">
+          <div class="myBtn height" [hidden]="numberCheck" (click)="saveNumber()">Save</div>
+          <span class="editUserName" (click)="editNumber()">edit</span>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

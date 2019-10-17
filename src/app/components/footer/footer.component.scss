@@ -59,12 +59,13 @@
 }
 
 .centerPartText {
-  width: 130px;
-  height: 15px;
+  width: 135px;
+  height: 18px;
   color: #7c8791;
   font-family: "Harmonia Sans Pro Cyr";
   font-size: 14px;
   font-style: italic;
+  margin-top: -2px;
 }
 
 .rightPartLetter {
@@ -77,6 +78,7 @@
   font-weight: 400;
   margin-top: -20px;
   text-align: center;
+  cursor: pointer;
   padding-top: 18px;
 }
 

@@ -13,10 +13,10 @@ export class SignUpComponent implements OnInit {
   photo: string = this.firstPhoto;
   emailUse: boolean = true;
 
-  usersForm: any = {
-    email: '',
-    password: ''
-  };
+  // usersForm: any = {
+  //   email: '',
+  //   password: ''
+  // };
 
   constructor(private fireStore: AngularFirestore,
     public authService: UsersService) { }
@@ -25,31 +25,32 @@ export class SignUpComponent implements OnInit {
   }
 
   public onSubmit(form: NgForm): void {
-    const data = Object.assign({}, form.value);
-    console.log(form.value);
-    // delete data.id;
-    if (form.value.id == null) {
-      this.fireStore.collection('users').add(data);
-      this.authService.SignUp(this.usersForm.email, this.usersForm.password);
-    }
-    else {
-      this.fireStore.doc('users/' + form.value.id).update(data);
-    }
-    this.resetForm(form);
   }
+  //   const data = Object.assign({}, form.value);
+  //   console.log(form.value);
+  //   // delete data.id;
+  //   if (form.value.id == null) {
+  //     this.fireStore.collection('users').add(data);
+  //     this.authService.SignUp(this.usersForm.email, this.usersForm.password);
+  //   }
+  //   else {
+  //     this.fireStore.doc('users/' + form.value.id).update(data);
+  //   }
+  //   this.resetForm(form);
+  // }
 
 
-  private resetForm(form?: NgForm): void {
-    if (form != null) {
-      form.reset();
-    }
-    else {
-      this.usersForm = {
-        email: '',
-        password: '',
-      }
-    }
-  }
+  // private resetForm(form?: NgForm): void {
+  //   if (form != null) {
+  //     form.reset();
+  //   }
+  //   else {
+  //     this.usersForm = {
+  //       email: '',
+  //       password: '',
+  //     }
+  //   }
+  // }
 
 
 

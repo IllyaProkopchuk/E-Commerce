@@ -5,30 +5,25 @@
         <div class="displayTableCell">
           <div class="authBlock">
             <h3 class="createText">Create an account</h3>
-            <form #form="ngForm" (submit)="onSubmit(form)">
               <div class="formGroup">
                 <input type="email" placeholder="Email Address" id="email" class="form-control"
                   aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Email"
-                  name="email" #userEmail required [(ngModel)]="usersForm.email" name="email">
-                <!-- <div *ngIf="qqq.invalid && qqq.touched" class="red">Write you`r email</div> -->
-                <!-- <div [hidden]="emailUse" class="red">This email has been already used</div> -->
+                   #userEmail>
               </div>
 
               <div class="formGroup">
                 <input type="password" class="form-control" aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default" placeholder="Password" name="password" #userPwd required
-                  [(ngModel)]="usersForm.password" name="password">
+                  aria-describedby="inputGroup-sizing-default" placeholder="Password" name="password" #userPwd required>
               </div>
 
-              <div class="formGroup">
-                <input class="myBtn newPos" value="Sign Up" type="submit" [disabled]="form.invalid">
+              <div class=" formGroup">
+                <input type="button" class="myBtn newPos" value="Sign Up"
+                  (click)="authService.SignUp(userEmail.value, userPwd.value)">
               </div>
-            </form>
             <div class="redirectToLogin" routerLink="/login" style="cursor: pointer;">
               <span>Already have an account? <span class="redirect">Log In</span></span>
             </div>
           </div>
-
         </div>
       </div>
     </div>
