@@ -8,11 +8,11 @@
       <p class="title">{{view?.description}}</p>
       <hr>
       <p class="choose">Choose Size:
-        <span *ngIf="view.xs" (click)="sizeSelect('xs')" [ngClass]="{'pickedSize': xsCheck}">XS</span>
-        <span *ngIf="view.s" (click)="sizeSelect('s')" [ngClass]="{'pickedSize': sCheck}">S</span>
-        <span *ngIf="view.m" (click)="sizeSelect('m')" [ngClass]="{'pickedSize': mCheck}">M</span>
-        <span *ngIf="view.l" (click)="sizeSelect('l')" [ngClass]="{'pickedSize': lCheck}">L</span>
-        <span *ngIf="view.xl" (click)="sizeSelect('xl')" [ngClass]="{'pickedSize': xlCheck}">XL</span>
+        <span *ngIf="view?.xs" (click)="sizeSelect('xs')" [ngClass]="{'pickedSize': xsCheck}">XS</span>
+        <span *ngIf="view?.s" (click)="sizeSelect('s')" [ngClass]="{'pickedSize': sCheck}">S</span>
+        <span *ngIf="view?.m" (click)="sizeSelect('m')" [ngClass]="{'pickedSize': mCheck}">M</span>
+        <span *ngIf="view?.l" (click)="sizeSelect('l')" [ngClass]="{'pickedSize': lCheck}">L</span>
+        <span *ngIf="view?.xl" (click)="sizeSelect('xl')" [ngClass]="{'pickedSize': xlCheck}">XL</span>
       </p>
       <p class="sizeWarning" [hidden]="selectSizeShow">Select size</p>
       <hr>

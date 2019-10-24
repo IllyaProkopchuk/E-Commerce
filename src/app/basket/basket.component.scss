@@ -1,6 +1,6 @@
 .body {
   background: #f4f6f8;
-  min-height: 400px;
+  min-height: 200px;
   padding-top: 50px;
 }
 
@@ -38,6 +38,7 @@
   justify-content: space-between;
   flex-direction: row;
 }
+
 .flexB {
   display: flex;
   justify-content: space-between;
@@ -68,8 +69,11 @@ span {
 
 .bag {
   font-family: "Harmonia Sans Pro Cyr";
-  font-size: 40px;
+  font-size: 50px;
   color: #ff5912;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 365px;
 }
 
 .rightPart {
@@ -101,6 +105,22 @@ span {
   margin-top: 30px;
   margin-left: 40px;
 }
+.singUp:hover{
+  color: #f4f6f8;
+  background-color:#ff5912 ;
+}
+
+.emptyBag {
+  color: #3c4751;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 40px;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
 
 .signUpText {
   font-family: "Harmonia Sans Pro Cyr Bold";
@@ -116,23 +136,64 @@ span {
   left: 15px;
 }
 
-@media screen and (max-width: 1050px){
-  .flexB{
+.position {
+  left: 22px;
+}
+
+@media screen and (max-width: 1050px) {
+  .flexB {
     flex-direction: column;
   }
-  .leftPart{
+
+  .leftPart {
     width: 100%;
   }
-  .showProduct{
+
+  .showProduct {
     width: 100%;
   }
 }
-@media screen and (max-width: 500px){
-  .showProduct{
+
+@media screen and (max-width: 500px) {
+  .showProduct {
     height: 150px;
     font-size: 10px;
   }
-  p{
+
+  p {
     font-size: 10px;
   }
+}
+
+.myBtn {
+  height: 40px;
+  border: 1px solid #ff5912;
+  border-radius: 3px;
+  position: relative;
+  color: #ff5912;
+  width: 250px;
+  margin-top: 30px;
+  margin-left: 40px;
+  background-color: #f4f6f8;
+  cursor: pointer;
+}
+
+.myBtn:hover {
+  color: #f4f6f8;
+  background-color: #ff5912;
+}
+
+.deleteBtn {
+  border: 1px solid #ff5912;
+  height: 30px;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #ff5912;
+  color: #f4f6f8;
+}
+
+.deleteBtn:hover {
+  color: #ff5912;
+  background-color: #f4f6f8;
+
 }

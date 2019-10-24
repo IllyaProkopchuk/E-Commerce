@@ -1,38 +1,37 @@
         <div class="row mb-4">
-        <!-- <div class="row" *ngIf="authService.userData as user"> -->
-          <div class="col-md-10">
+          <!-- <div class="row" *ngIf="authService.userData as user"> -->
+          <div class="col-md-10 centrum">
             <div class="media">
               <div class="media-body">
-                <h1 class="hello">Hello: <strong
-                    class="hello">{{(user.firstName) ? user.firstName : 'User'}}</strong>
+                <h1 class="hello">Hello: <strong class="hello">{{(user?.firstName) ? user?.firstName : 'User'}}</strong>
                 </h1>
-                <p>User ID: <strong>{{user.uid}}</strong></p>
-                <p>Email: <strong>{{user.email}}</strong></p>
+                <p>User ID: <strong>{{user?.uid}}</strong></p>
+                <p>Email: <strong>{{user?.email}}</strong></p>
                 <div class="flex">
-                  <p>First Name: <strong>{{(user.firstName) ? user.firstName: 'User Name'}}</strong></p>
+                  <p>First Name: <strong>{{(user?.firstName) ? user?.firstName: 'User Name'}}</strong></p>
                   <input type="text" [hidden]="hideDisplayNameCheck" class="height" [(ngModel)]="fName" name="fName">
                   <div class="myBtn height" [hidden]="hideDisplayNameCheck" (click)="saveDisplayName()">Save</div>
-                  <span class="editUserName" (click)="editUserName()">edit</span>
+                  <span class="editUserName" (click)="editUserName()">edit</span> 
                 </div>
                 <div class="flex">
-                  <p>Second Name: <strong>{{(user.secondName) ? user.secondName: 'Second Name'}}</strong></p>
+                  <p>Second Name: <strong>{{(user?.secondName) ? user?.secondName: 'Second Name'}}</strong></p>
                   <input type="text" [hidden]="hideSecondNameCheck" class="height" [(ngModel)]="sName" name="sName">
                   <div class="myBtn height" [hidden]="hideSecondNameCheck" (click)="saveSecondName()">Save</div>
                   <span class="editUserName" (click)="editSecondName()">edit</span>
                 </div>
                 <div class="flex">
-                  <p>Gender: <strong>{{(user.gender) ? user.gender: 'gender'}}</strong></p>
+                  <p>Gender: <strong>{{(user?.gender) ? user?.gender: 'gender'}}</strong></p>
                   <input type="text" [hidden]="genderCheck" class="height" [(ngModel)]="gender" name="gender">
                   <div class="myBtn height" [hidden]="genderCheck" (click)="saveGender()">Save</div>
                   <span class="editUserName" (click)="editGender()">edit</span>
                 </div>
                 <div class="flex">
-                  <p>Phone number: <strong>{{(user.phone) ? user.phone: '-'}}</strong></p>
+                  <p>Phone number: <strong>{{(user?.phone) ? user?.phone: '-'}}</strong></p>
                   <input type="text" [hidden]="phoneCheck" class="height" [(ngModel)]="phone" name="phone">
                   <div class="myBtn height" [hidden]="phoneCheck" (click)="savePhone()">Save</div>
                   <span class="editUserName" (click)="editPhone()">edit</span>
                 </div>
-                <p>Email Verified: <input type="checkbox" [checked]="user.emailVerified" disabled></p>
+                <p>Email Verified: <input type="checkbox" [checked]="user?.emailVerified" disabled></p>
                 <button class="myBtn newPos" (click)="authService.SignOut()">Log Out</button>
               </div>
             </div>

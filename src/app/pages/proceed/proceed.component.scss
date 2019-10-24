@@ -1,0 +1,115 @@
+.bag {
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 50px;
+  color: #ff5912;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 225px;
+}
+
+.body {
+  background: #f4f6f8;
+  min-height: 200px;
+  padding-top: 50px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.border {
+  width: 60%;
+  margin: 0 auto;
+  min-height: 70px;
+  padding: 10px;
+}
+
+.left {
+  font-family: "Harmonia Sans Pro Cyr Bold";
+  font-size: 24px;
+  padding-top: 12px;
+}
+
+.right {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.size {
+  font-size: 28px;
+  font-family: "Harmonia Sans Pro Cyr Bold";
+}
+
+.bold {
+  font-family: "Harmonia Sans Pro Cyr Bold";
+
+}
+
+.showProduct {
+  width: 90%;
+  height: 138px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid lightgrey;
+}
+
+p {
+  font-family: "Harmonia Sans Pro Cyr";
+  font-weight: 300;
+  font-size: 14px;
+}
+
+span {
+  font-family: "Harmonia Sans Pro Cyr";
+}
+
+.productHead p {
+  font-family: "Harmonia Sans Pro Cyr";
+}
+
+.productHead {
+  padding-top: 10px;
+}
+
+.op {
+  opacity: 0.7;
+}
+
+.myBtn {
+  height: 50px;
+  background-color: #ff5912;
+  border: none;
+  color: #ffffff;
+  font-family: "Harmonia Sans Pro Cyr";
+  font-size: 22px;
+  font-weight: 400;
+  width: 200px;
+  // margin: 0 auto;
+  cursor: pointer;
+  border: 1px solid #ff5912;
+}
+
+.myBtn:hover{
+  color: #ff5912;
+  background-color: #f4f6f8;
+}
+.flexB{
+  display: flex;
+  justify-content: space-around;
+}
+.fullPrice{
+  font-family: "Harmonia Sans Pro Cyr";
+  color: #ff5912;
+  font-size: 25px;
+  margin-top: 11px;
+}
+.height{
+  height: 25px;
+}
+.red{
+  color: red;
+}

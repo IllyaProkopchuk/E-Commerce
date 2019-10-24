@@ -149,7 +149,7 @@ h1 {
 
 .showItem {
   width: 25%;
-  height: 385px;
+  height: 395px;
   background-color: #ffffff;
   padding: 20px;
   margin: 20px;
@@ -227,7 +227,7 @@ h1 {
 }
 
 .salesBlock {
-  width: 33%;
+  width: 30%;
 }
 
 .salesItem {
@@ -238,6 +238,7 @@ h1 {
   padding-left: 28px;
   justify-content: space-between;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .salesItemTitle {
@@ -249,17 +250,20 @@ h1 {
 }
 
 .salesItemDescription {
-  width: 167px;
-  height: 35px;
+  // width: 167px;
+  // height: 35px;
   color: #34404b;
   font-family: "Harmonia Sans Pro Cyr";
   font-size: 18px;
   font-weight: 700;
+  width: 130px;
+  height: 37px;
+  overflow: hidden;
 }
 
 .salesItemPrice {
-  width: 35px;
-  height: 17px;
+  width: 115px;
+  height: 40px;
   color: #ff5912;
   font-family: "Harmonia Sans Pro Cyr";
   font-size: 38px;
@@ -401,73 +405,88 @@ span {
   .itemPrice {
     margin-top: 45px
   }
-  .showItem{
+
+  .showItem {
     height: 310px;
   }
-  .phBox{
+
+  .phBox {
     width: 80%;
   }
-  .textTop{
+
+  .textTop {
     font-size: 50px;
   }
-  .banner{
+
+  .banner {
     height: 440px;
   }
-  .innerText{
+
+  .innerText {
     top: 16%;
     left: 13%;
   }
 }
+
 @media screen and (max-width: 800px) {
-  .textTop{
+  .textTop {
     font-size: 35px;
   }
-  .flex{
+
+  .flex {
     flex-direction: column;
   }
-  .showItem{
+
+  .showItem {
     width: 50%;
     margin: 0 auto;
     height: 500px;
     margin-bottom: 20px;
   }
-  .salesPos{
+
+  .salesPos {
     flex-direction: column;
   }
-  .salesBlock{
+
+  .salesBlock {
     width: 50%;
     margin: 0 auto;
   }
-  .salesItem{
+
+  .salesItem {
     height: 465px;
   }
-  .loadMore{
+
+  .loadMore {
     display: none;
   }
 }
-@media screen and (max-width: 770px){
-  .showItem{
+
+@media screen and (max-width: 770px) {
+  .showItem {
     height: 430px;
     width: 270px;
   }
-  .salesBlock{
+
+  .salesBlock {
     height: 390px;
     width: 275px;
     margin-bottom: 20px;
   }
-  .salesItem{
+
+  .salesItem {
     height: 390px;
   }
 }
 
-@media screen and (max-width: 400px){
-  h1{
+@media screen and (max-width: 400px) {
+  h1 {
     font-size: 80px;
     font-weight: 400;
     margin-bottom: 13px;
   }
-  .textTop{
-    font-size:30px;
+
+  .textTop {
+    font-size: 30px;
   }
 }
-

@@ -1,0 +1,116 @@
+<div class="body">
+  <form #form="ngForm" (submit)="onSubmit(form)">
+    <div class="container">
+      <p class="bag" (click)="click()">Checkout</p>
+      <div class="border">
+        <div class="shippingAddress flex">
+          <div class="left">
+            <p class="size">Shiping Address</p>
+          </div>
+          <div class="center" *ngIf="logined">
+            <p>{{(userArray?.firstName) ? userArray?.firstName : 'Name'}}
+              {{(userArray?.secondName) ? userArray?.secondName : 'sName'}}</p>
+            <p>{{(userArray?.street) ? userArray?.street : 'Street'}}
+              {{(userArray?.buildingNumber) ? userArray?.buildingNumber : '#'}},
+              {{(userArray?.city) ? userArray?.city : 'city'}},
+              {{(userArray?.country) ? userArray?.country : 'country'}}</p>
+            <p>+{{(userArray?.phone) ? userArray?.phone : 'phone Number'}}</p>
+          </div>
+          <div class="center" *ngIf="!logined">
+            <div class="form-group">
+              <label for="firstName">First name</label>
+              <input class="form-control height" #eee="ngModel" type="text" id="firstName" placeholder="type here..."
+                required [(ngModel)]="orderForm.firstName" name="firstName">
+              <div class="red" *ngIf="eee.invalid && eee.touched">Fill in this field</div>
+            </div>
+            <div class="form-group">
+              <label for="secondName">Second name</label>
+              <input class="form-control height" #qqq="ngModel" type="text" id="secondName" placeholder="type here..."
+                required [(ngModel)]="orderForm.secondName" name="secondName">
+              <div class="red" *ngIf="qqq.invalid && qqq.touched">Fill in this field</div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input class="form-control height" #www="ngModel" type="number" id="phone" placeholder="type here..."
+                required [(ngModel)]="orderForm.phone" name="phone">
+              <div class="red" *ngIf="www.invalid && www.touched">Fill in this field</div>
+            </div>
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input class="form-control height" #rrr="ngModel" type="text" id="country" placeholder="type here..."
+                required [(ngModel)]="orderForm.country" name="country">
+              <div class="red" *ngIf="rrr.invalid && rrr.touched">Fill in this field</div>
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input class="form-control height" #aaa="ngModel" type="text" id="city" placeholder="type here..."
+                required [(ngModel)]="orderForm.city" name="city">
+              <div class="red" *ngIf="aaa.invalid && aaa.touched">Fill in this field</div>
+            </div>
+            <div class="form-group">
+              <label for="street">Street</label>
+              <input class="form-control height" #sss="ngModel" type="text" id="street" placeholder="type here..."
+                required [(ngModel)]="orderForm.street" name="street">
+              <div class="red" *ngIf="sss.invalid && sss.touched">Fill in this field</div>
+            </div>
+            <div class="form-group">
+              <label for="numb">Building number</label>
+              <input class="form-control height" #ddd="ngModel" type="text" id="numb" placeholder="type here..."
+                required [(ngModel)]="orderForm.buildingNumber" name="buildingNumber">
+              <div class="red" *ngIf="ddd.invalid && ddd.touched">Fill in this field</div>
+            </div>
+          </div>
+          <div class="right">
+            <p style="opacity: 0;">change></p>
+          </div>
+        </div>
+      </div>
+      <div class="border">
+        <div class="shippingAddress flex">
+          <div class="left">
+            <p class="size">Payment Method</p>
+          </div>
+          <div class="center">
+            <p class="mt-3">by Cash</p>
+          </div>
+          <div class="right">
+            <p style="opacity: 0;">change></p>
+          </div>
+        </div>
+      </div>
+      <div class="border left size">
+        <p class="mt-2 size">Review items</p>
+      </div>
+      <div class="border">
+        <div class="showProduct" *ngFor="let prod of productsArray; let i = index">
+          <div class="productHead flex">
+            <p class="ml-4 op">Item</p>
+            <div class="flex">
+              <p class="op mr-4">Item Price</p>
+            </div>
+          </div>
+          <div class="productBody flex">
+            <div class="left flex">
+              <div class="photoPart">
+                <img style="height: 80px;" [src]="prod.photo" alt="">
+              </div>
+              <div class="aboutPart mt-1">
+                <p class="bold">{{prod.name}}</p>
+                <p class="bold">Brand: <span>{{prod.brand}}</span></p>
+                <p class="bold">Size: <span>{{prod.currentSize}}</span></p>
+              </div>
+            </div>
+            <div class="rigth flex">
+              <p class="mr-5 mt-4">${{prod.price}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border flexB">
+        <button *ngIf="logined" class="myBtn" (click)="placeOrder()">Place Your Order</button>
+        <button *ngIf="!logined" class="myBtn" type="submit">Place Your Order2</button>
+        <p class="fullPrice">Order Total ${{fullPrice}}</p>
+      </div>
+    </div>
+    </form>
+</div>

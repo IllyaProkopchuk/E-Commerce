@@ -20,15 +20,15 @@
     <div class="container flex around">
       <div class="showItem" *ngFor="let prod of products; let i = index">
         <div class="notHover">
-          <img [src]=prod.photo alt="" class="itemImg">
-          <p class="itemName">{{prod.name}}</p>
-          <p class="itemPrice">${{prod.price}}</p>
+          <img [src]=prod?.photo alt="" class="itemImg">
+          <p class="itemName">{{prod?.name}}</p>
+          <p class="itemPrice">${{prod?.price}}</p>
         </div>
         <div class="whenHover">
-          <div class="phBox"><img [src]="prod.photo" alt="" class="imgHoverBox"></div>
-          <p class="productHoverName">{{prod.name}}</p>
-          <p class="sizeHover">Sizes: <span *ngIf="prod.xs">xs</span><span *ngIf="prod.s">s</span>
-            <span *ngIf="prod.m">m</span><span *ngIf="prod.l">l</span><span *ngIf="prod.xl">xl</span></p>
+          <div class="phBox"><img [src]="prod?.photo" alt="" class="imgHoverBox"></div>
+          <p class="productHoverName">{{prod?.name}}</p>
+          <p class="sizeHover">Sizes: <span *ngIf="prod?.xs">xs</span><span *ngIf="prod?.s">s</span>
+            <span *ngIf="prod?.m">m</span><span *ngIf="prod?.l">l</span><span *ngIf="prod?.xl">xl</span></p>
           <div class="rows">
             <div class="myBtn" [routerLink]="[ '/products', prod.id ]">
               <p class="innerBtnText">More details</p>
@@ -58,8 +58,21 @@
         </div>
         <div class="salesDescriptions">Best sales, only for best costumers!</div>
       </div>
-      <div class="salesPos">
-        <div class="salesBlock">
+      <div class="salesPos" >
+        <div class="salesBlock" *ngFor="let p of pr">
+          <div class="salesItem flexSale" [routerLink]="[ '/products', p.id ]">
+            <div class="salesItemImage">
+              <img
+              [src]="p?.photo"
+              alt="" class="salesItemImage">
+            </div>
+            <div class="salesItemTitle">
+              <p class="salesItemDescription">{{p.name}}</p>
+              <p class="salesItemPrice">${{p.price}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="salesBlock">
           <div class="salesItem flexSale">
             <div class="salesItemImage">
               <img
@@ -71,8 +84,8 @@
               <p class="salesItemPrice">$30</p>
             </div>
           </div>
-        </div>
-        <div class="salesBlock">
+        </div> -->
+        <!-- <div class="salesBlock">
           <div class="salesItem flexSale">
             <div class="salesItemImage">
               <img
@@ -84,20 +97,7 @@
               <p class="salesItemPrice">$30</p>
             </div>
           </div>
-        </div>
-        <div class="salesBlock">
-          <div class="salesItem flexSale">
-            <div class="salesItemImage">
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/finalproject-1c299.appspot.com/o/homePagePhoto%2FNF%20Dryzzle%20Jacket.jpg?alt=media&token=43508172-6a6b-44e4-8ced-5ef40e2d2cf2"
-                alt="" class="salesItemImage">
-            </div>
-            <div class="salesItemTitle">
-              <p class="salesItemDescription">The North Face Dryzzle Jacket</p>
-              <p class="salesItemPrice">$30</p>
-            </div>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

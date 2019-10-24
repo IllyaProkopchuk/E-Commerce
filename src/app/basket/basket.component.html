@@ -2,24 +2,27 @@
   <div class="container">
     <p class="bag">Shopping Bag</p>
     <div class="flexB">
-      <div class="leftPart">
-        <div class="showProduct" *ngFor="let prod of productsArray">
+      <div class="wrapper" [hidden]="!sizeChecker">
+        <div  class="emptyBag">You`r bag is empty!</div>
+        <div class="myBtn" routerLink="products">
+          <p  class="signUpText position">Start Shoping Now!</p>
+        </div>
+      </div>
+      <div class="leftPart" [hidden]="sizeChecker">
+        <div class="showProduct" *ngFor="let prod of productsArray; let i = index">
           <div class="productHead flex">
             <p class="ml-4 op">Item</p>
             <div class="flex">
-              <p class="op">Item Price</p>
-              <p class="ml-4 op">Quantity</p>
-              <p class="ml-4 op">Total Price</p>
+              <p class="op mr-4">Item Price</p>
+              <p class="ml-4 op">Delete</p>
             </div>
           </div>
           <div class="productBody flex">
             <div class="left flex">
               <div class="photoPart">
-                <img style="height: 80px;"
-                  [src]="prod.photo"
-                  alt="">
+                <img style="height: 80px;" [src]="prod.photo" alt="">
               </div>
-              <div class="aboutPart mt-4">
+              <div class="aboutPart mt-1">
                 <p>{{prod.name}}</p>
                 <p>Brand: <span>{{prod.brand}}</span></p>
                 <p>Size: <span>{{prod.currentSize}}</span></p>
@@ -27,27 +30,14 @@
             </div>
             <div class="rigth flex">
               <p class="mr-5 mt-4">${{prod.price}}</p>
-              <div class="mr-5 mt-4">
-                <select name="" id="">
-                  <option value="" selected>1</option>
-                  <option value="">2</option>
-                  <option value="">3</option>
-                  <option value="">4</option>
-                  <option value="">5</option>
-                  <option value="">6</option>
-                  <option value="">7</option>
-                  <option value="">8</option>
-                  <option value="">9</option>
-                </select>
-              </div>
-              <p class="mt-4">${{prod.price}}</p>
+              <p class="mt-3"><button class="deleteBtn" (click)="delete(i)">delete</button></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="rightPart">
+      <div class="rightPart" [hidden]="sizeChecker">
         <p class="orderSumHead">Order Summary: <span class="price">${{fullPrice}}</span></p>
-        <div class="singUp" (click)="proceedToCheckout()">
+        <div class="singUp" (click)="proceed()">
           <p class="signUpText pos">Proceed to Checkout</p>
         </div>
       </div>

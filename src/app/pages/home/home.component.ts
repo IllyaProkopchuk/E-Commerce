@@ -10,6 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class HomeComponent implements OnInit {
   products: Array<IProducts>;
+  pr: Array<IProducts>;
   last: Array<any>;
   value: number = -3;
   load: number = 2;
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(private productsServices: ProductsService,
     private fireStore: AngularFirestore) {
     this.getProdData();
+    this.getData();
   }
 
   ngOnInit() { }
@@ -34,6 +36,20 @@ export class HomeComponent implements OnInit {
         }).slice(this.value);
       }
     );
+}
+
+public getData() {
+  this.productsServices.getProducts().subscribe(
+    myArray => {
+      console.log('myArr', myArray);
+      this.pr = myArray.map(item => {
+        return {
+          id: item.payload.doc.id,
+          ...item.payload.doc.data()
+        } as IProducts;
+      }).slice(5,8);
+    }
+  );
 }
 
   public loadMore() {

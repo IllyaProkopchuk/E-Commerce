@@ -92,13 +92,20 @@ export class ProductDetailsComponent implements OnInit {
     if (this.xlCheck == true || this.lCheck == true || this.mCheck == true || this.sCheck == true || this.xsCheck == true) {
       this.selectSizeShow = true;
       let bagArray: any = [];
-      if (this.user.bag) {
-        this.user.bag.map(arr => bagArray.push(arr));
+      const userLocal = JSON.parse(localStorage.getItem('user'));
+      if (userLocal === null) {
+        let guestObj = Object.assign({}, { size: this.saveSize }, { productId: this.productId });
+        console.log('guestArr', guestObj);
+        this.saveDataToLocalStorage(guestObj);
+      } else {
+        if (this.user.bag) {
+          this.user.bag.map(arr => bagArray.push(arr));
+        }
+        let obj = Object.assign({}, { size: this.saveSize }, { productId: this.productId });
+        bagArray.push(obj);
+        this.push(bagArray);
+        console.log(bagArray);
       }
-      let obj = Object.assign({}, { size: this.saveSize }, { productId: this.productId });
-      bagArray.push(obj);
-      this.push(bagArray);
-      console.log(bagArray);
       this.xsCheck = false;
       this.sCheck = false;
       this.mCheck = false;
@@ -116,12 +123,14 @@ export class ProductDetailsComponent implements OnInit {
   }
   public getUser() {
     const userLocal = JSON.parse(localStorage.getItem('user'));
-    this.id = userLocal.uid;
-    this.authService.getOneUser(this.id).subscribe(
-      data => {
-        this.user = data.payload.data();
-      }
-    );
+    if (userLocal !== null) {
+      this.id = userLocal.uid;
+      this.authService.getOneUser(this.id).subscribe(
+        data => {
+          this.user = data.payload.data();
+        }
+      );
+    }
   }
 
   public getMoreDetails() {
@@ -137,5 +146,19 @@ export class ProductDetailsComponent implements OnInit {
     this.location.back();
   }
 
+  public saveDataToLocalStorage(data) {
+    let a = [];
+    let b = [];
+    let с = [];
+    b = JSON.parse(localStorage.getItem('session'));
+    console.log('b', b);
+    if (b != null) {
+      с = a.concat(b);
+      console.log('a1', a);
+    }
+    с.push(data);
+    console.log('a2', с);
+    localStorage.setItem('session', JSON.stringify(с));
+  }
 }
 

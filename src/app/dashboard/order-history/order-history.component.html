@@ -1,1 +1,26 @@
-<p class="hello">You heve no order history</p>
+<p class="hello" *ngIf="!checker">You have no order history</p>
+<div *ngIf="checker">
+  <div class="showProduct" *ngFor="let prod of currentOrder; let i = index">
+    <div class="productHead flex">
+      <p class="ml-4 op">Item</p>
+      <div class="flex">
+        <p class="op mr-4">Item Price</p>
+      </div>
+    </div>
+    <div class="productBody flex">
+      <div class="left flex">
+        <div class="photoPart">
+          <img style="height: 80px;" [src]="prod.photo" alt="">
+        </div>
+        <div class="aboutPart mt-1">
+          <p>{{prod.name}}</p>
+          <p>Brand: <span>{{prod.brand}}</span></p>
+          <p>Size: <span>{{prod.currentSize}}</span></p>
+        </div>
+      </div>
+      <div class="rigth flex">
+        <p class="mr-5 mt-4">${{prod.price}}</p>
+      </div>
+    </div>
+  </div>
+</div>

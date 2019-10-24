@@ -1,6 +1,6 @@
 .body {
   background-color: #ffffff;
-  height: 560px;
+  min-height: 560px;
   padding-top: 20px;
 }
 
@@ -26,7 +26,7 @@ img {
 }
 
 .name {
-  height: 70px;
+  height: 50px;
   color: #ff5912;
   font-family: "Harmonia Sans Pro Cyr Bold";
   font-size: 56px;
@@ -34,10 +34,11 @@ img {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 50px;
+  overflow: hidden;
 }
 
 .title {
-  height: 120px;
+  min-height: 120px;
   color: #495662;
   font-family: "Harmonia Sans Pro Cyr";
   font-size: 16px;

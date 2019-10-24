@@ -13,4 +13,14 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  public openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("v-pills-tabContent").style.marginLeft = "250px";
+  }
+
+  public closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("v-pills-tabContent").style.marginLeft = "0";
+  }
 }

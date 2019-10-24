@@ -48,6 +48,7 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
 import { AddressComponent } from './dashboard/address/address.component';
 import { OrderHistoryComponent } from './dashboard/order-history/order-history.component';
 import { AdminFeedbackComponent } from './admin/admin-feedback/admin-feedback.component';
+import { ProceedComponent } from './pages/proceed/proceed.component';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { AdminFeedbackComponent } from './admin/admin-feedback/admin-feedback.co
     AddressComponent,
     OrderHistoryComponent,
     AdminFeedbackComponent,
+    ProceedComponent,
   ],
   imports: [
     BrowserModule,

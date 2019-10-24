@@ -23,11 +23,13 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
 import { AddressComponent } from './dashboard/address/address.component';
 import { OrderHistoryComponent } from './dashboard/order-history/order-history.component';
 import { AdminFeedbackComponent } from './admin/admin-feedback/admin-feedback.component';
+import { ProceedComponent } from './pages/proceed/proceed.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
+  { path: 'proceed', component: ProceedComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent, canActivate: [SecureInnerPages] },
